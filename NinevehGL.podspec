@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.screenshots      = ["http://nineveh.gl/imgs/ninevehgl_img.png", "http://nineveh.gl/imgs/ngl_lesson_10_1.png"]
   s.license          = 'MIT'
   s.author           = { "NinevehGL" => "ngl@nineveh.gl" }
-  s.source           = { :git => "https://github.com/dineybomfim/Nippur.git", :tag => s.version, :submodules => true }
+  s.source           = { :git => "https://github.com/NinevehGL/NinevehGL.git", :tag => s.version, :submodules => true }
   s.social_media_url = 'https://twitter.com/ninevehgl'
 
   s.requires_arc = false
