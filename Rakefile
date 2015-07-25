@@ -25,8 +25,8 @@ private
 
 def run_tests(scheme, sdk)
   puts_green("=== Running '#{scheme}' at '#{sdk}' ===")
-  sh("xcodebuild -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration 'Release' clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
-  sh("xctool -workspace Nippur.xcworkspace -scheme '#{scheme}' -sdk 'iphonesimulator' -configuration 'Debug' -arch 'i386' clean test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ; exit ${PIPESTATUS[0]}") rescue nil
+  sh("xcodebuild -workspace NinevehGL.xcworkspace -scheme '#{scheme}' -sdk '#{sdk}' -configuration 'Release' clean test | xcpretty -c ; exit ${PIPESTATUS[0]}") rescue nil
+  sh("xctool -workspace NinevehGL.xcworkspace -scheme '#{scheme}' -sdk 'iphonesimulator' -configuration 'Debug' -arch 'i386' clean test ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ; exit ${PIPESTATUS[0]}") rescue nil
   puts_green("=== Done '#{scheme}' at '#{sdk}' ===")
 end
 
