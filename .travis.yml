@@ -1,0 +1,8 @@
+language: objective-c
+before_install:
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- rake install
+script:
+- rake test
+after_success:
+- rake report

@@ -1,0 +1,838 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		607ABBDC136A7EE400AD0AF6 /* Build All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 607ABBDD136A7EE400AD0AF6 /* Build configuration list for PBXAggregateTarget "Build All" */;
+			buildPhases = (
+				607ABBE0136A7EEC00AD0AF6 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build All";
+			productName = "Build Framework";
+		};
+		60E8BF6C13C6C017002FDBBC /* Build Docs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 60E8BF6D13C6C017002FDBBC /* Build configuration list for PBXAggregateTarget "Build Docs" */;
+			buildPhases = (
+				60E8BF7013C6C01B002FDBBC /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Docs";
+			productName = "Build Docs";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		6099E8041B6408B700E09C05 /* NGLEase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7951B6408B700E09C05 /* NGLEase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8051B6408B700E09C05 /* NGLEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7961B6408B700E09C05 /* NGLEase.m */; };
+		6099E8061B6408B700E09C05 /* NGLTween.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7971B6408B700E09C05 /* NGLTween.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8071B6408B700E09C05 /* NGLTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7981B6408B700E09C05 /* NGLTween.m */; };
+		6099E8081B6408B700E09C05 /* NGLCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E79A1B6408B700E09C05 /* NGLCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8091B6408B700E09C05 /* NGLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E79B1B6408B700E09C05 /* NGLCamera.m */; };
+		6099E80A1B6408B700E09C05 /* NGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E79C1B6408B700E09C05 /* NGLContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E80B1B6408B700E09C05 /* NGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E79D1B6408B700E09C05 /* NGLContext.m */; };
+		6099E80C1B6408B700E09C05 /* NGLCopying.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E79E1B6408B700E09C05 /* NGLCopying.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E80D1B6408B700E09C05 /* NGLCoreEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E79F1B6408B700E09C05 /* NGLCoreEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E80E1B6408B700E09C05 /* NGLCoreMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A01B6408B700E09C05 /* NGLCoreMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E80F1B6408B700E09C05 /* NGLCoreTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A11B6408B700E09C05 /* NGLCoreTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8101B6408B700E09C05 /* NGLDataType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A21B6408B700E09C05 /* NGLDataType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8111B6408B700E09C05 /* NGLError.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A31B6408B700E09C05 /* NGLError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8121B6408B700E09C05 /* NGLError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7A41B6408B700E09C05 /* NGLError.m */; };
+		6099E8131B6408B700E09C05 /* NGLFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A51B6408B700E09C05 /* NGLFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8141B6408B700E09C05 /* NGLFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7A61B6408B700E09C05 /* NGLFunctions.m */; };
+		6099E8151B6408B700E09C05 /* NGLGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A71B6408B700E09C05 /* NGLGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8161B6408B700E09C05 /* NGLGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7A81B6408B700E09C05 /* NGLGlobal.m */; };
+		6099E8171B6408B700E09C05 /* NGLGroup3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7A91B6408B700E09C05 /* NGLGroup3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8181B6408B700E09C05 /* NGLGroup3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7AA1B6408B700E09C05 /* NGLGroup3D.m */; };
+		6099E8191B6408B700E09C05 /* NGLMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7AB1B6408B700E09C05 /* NGLMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E81A1B6408B700E09C05 /* NGLMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7AC1B6408B700E09C05 /* NGLMesh.m */; };
+		6099E81B1B6408B700E09C05 /* NGLMeshElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7AD1B6408B700E09C05 /* NGLMeshElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E81C1B6408B700E09C05 /* NGLMeshElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7AE1B6408B700E09C05 /* NGLMeshElements.m */; };
+		6099E81D1B6408B700E09C05 /* NGLObject3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7AF1B6408B700E09C05 /* NGLObject3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E81E1B6408B700E09C05 /* NGLObject3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7B01B6408B700E09C05 /* NGLObject3D.m */; };
+		6099E81F1B6408B700E09C05 /* NGLRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7B11B6408B700E09C05 /* NGLRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8201B6408B700E09C05 /* NGLTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7B21B6408B700E09C05 /* NGLTexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8211B6408B700E09C05 /* NGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7B31B6408B700E09C05 /* NGLTexture.m */; };
+		6099E8221B6408B700E09C05 /* NGLThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7B41B6408B700E09C05 /* NGLThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8231B6408B700E09C05 /* NGLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7B51B6408B700E09C05 /* NGLThread.m */; };
+		6099E8241B6408B700E09C05 /* NGLTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7B61B6408B700E09C05 /* NGLTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8251B6408B700E09C05 /* NGLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7B71B6408B700E09C05 /* NGLTimer.m */; };
+		6099E8261B6408B700E09C05 /* NGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7B81B6408B700E09C05 /* NGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8271B6408B700E09C05 /* NGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7B91B6408B700E09C05 /* NGLView.m */; };
+		6099E8281B6408B700E09C05 /* NGLFog.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7BB1B6408B700E09C05 /* NGLFog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8291B6408B700E09C05 /* NGLFog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7BC1B6408B700E09C05 /* NGLFog.m */; };
+		6099E82A1B6408B700E09C05 /* NGLLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7BD1B6408B700E09C05 /* NGLLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E82B1B6408B700E09C05 /* NGLLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7BE1B6408B700E09C05 /* NGLLight.m */; };
+		6099E82C1B6408B700E09C05 /* NGLMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7BF1B6408B700E09C05 /* NGLMaterial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E82D1B6408B700E09C05 /* NGLMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7C01B6408B700E09C05 /* NGLMaterial.m */; };
+		6099E82E1B6408B700E09C05 /* NGLMaterialMulti.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7C11B6408B700E09C05 /* NGLMaterialMulti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E82F1B6408B700E09C05 /* NGLMaterialMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7C21B6408B700E09C05 /* NGLMaterialMulti.m */; };
+		6099E8301B6408B700E09C05 /* NGLShaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7C31B6408B700E09C05 /* NGLShaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8311B6408B700E09C05 /* NGLShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7C41B6408B700E09C05 /* NGLShaders.m */; };
+		6099E8321B6408B700E09C05 /* NGLShadersMulti.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7C51B6408B700E09C05 /* NGLShadersMulti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8331B6408B700E09C05 /* NGLShadersMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7C61B6408B700E09C05 /* NGLShadersMulti.m */; };
+		6099E8341B6408B700E09C05 /* NGLSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7C71B6408B700E09C05 /* NGLSurface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8351B6408B700E09C05 /* NGLSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7C81B6408B700E09C05 /* NGLSurface.m */; };
+		6099E8361B6408B700E09C05 /* NGLSurfaceMulti.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7C91B6408B700E09C05 /* NGLSurfaceMulti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8371B6408B700E09C05 /* NGLSurfaceMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7CA1B6408B700E09C05 /* NGLSurfaceMulti.m */; };
+		6099E8381B6408B700E09C05 /* NGLES2Buffers.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7CC1B6408B700E09C05 /* NGLES2Buffers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8391B6408B700E09C05 /* NGLES2Buffers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7CD1B6408B700E09C05 /* NGLES2Buffers.m */; };
+		6099E83A1B6408B700E09C05 /* NGLES2Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7CE1B6408B700E09C05 /* NGLES2Engine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E83B1B6408B700E09C05 /* NGLES2Engine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7CF1B6408B700E09C05 /* NGLES2Engine.m */; };
+		6099E83C1B6408B700E09C05 /* NGLES2Functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7D01B6408B700E09C05 /* NGLES2Functions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E83D1B6408B700E09C05 /* NGLES2Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7D11B6408B700E09C05 /* NGLES2Functions.m */; };
+		6099E83E1B6408B700E09C05 /* NGLES2Mesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7D21B6408B700E09C05 /* NGLES2Mesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E83F1B6408B700E09C05 /* NGLES2Mesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7D31B6408B700E09C05 /* NGLES2Mesh.m */; };
+		6099E8401B6408B700E09C05 /* NGLES2Polygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7D41B6408B700E09C05 /* NGLES2Polygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8411B6408B700E09C05 /* NGLES2Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7D51B6408B700E09C05 /* NGLES2Polygon.m */; };
+		6099E8421B6408B700E09C05 /* NGLES2Program.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7D61B6408B700E09C05 /* NGLES2Program.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8431B6408B700E09C05 /* NGLES2Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7D71B6408B700E09C05 /* NGLES2Program.m */; };
+		6099E8441B6408B700E09C05 /* NGLES2Textures.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7D81B6408B700E09C05 /* NGLES2Textures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8451B6408B700E09C05 /* NGLES2Textures.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7D91B6408B700E09C05 /* NGLES2Textures.m */; };
+		6099E8461B6408B700E09C05 /* NGLBoundingBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7DB1B6408B700E09C05 /* NGLBoundingBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8471B6408B700E09C05 /* NGLBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7DC1B6408B700E09C05 /* NGLBoundingBox.m */; };
+		6099E8481B6408B700E09C05 /* NGLMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7DD1B6408B700E09C05 /* NGLMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8491B6408B700E09C05 /* NGLMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7DE1B6408B700E09C05 /* NGLMath.m */; };
+		6099E84A1B6408B700E09C05 /* NGLMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7DF1B6408B700E09C05 /* NGLMatrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E84B1B6408B700E09C05 /* NGLMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7E01B6408B700E09C05 /* NGLMatrix.m */; };
+		6099E84C1B6408B700E09C05 /* NGLQuaternion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7E11B6408B700E09C05 /* NGLQuaternion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E84D1B6408B700E09C05 /* NGLQuaternion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7E21B6408B700E09C05 /* NGLQuaternion.m */; };
+		6099E84E1B6408B700E09C05 /* NGLVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7E31B6408B700E09C05 /* NGLVector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E84F1B6408B700E09C05 /* NGLVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7E41B6408B700E09C05 /* NGLVector.m */; };
+		6099E8501B6408B700E09C05 /* NinevehGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7E51B6408B700E09C05 /* NinevehGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8511B6408B700E09C05 /* NGLParserDAE.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7E71B6408B700E09C05 /* NGLParserDAE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8521B6408B700E09C05 /* NGLParserDAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7E81B6408B700E09C05 /* NGLParserDAE.m */; };
+		6099E8531B6408B700E09C05 /* NGLParserImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7E91B6408B700E09C05 /* NGLParserImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8541B6408B700E09C05 /* NGLParserImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7EA1B6408B700E09C05 /* NGLParserImage.m */; };
+		6099E8551B6408B700E09C05 /* NGLParserMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7EB1B6408B700E09C05 /* NGLParserMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8561B6408B700E09C05 /* NGLParserMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7EC1B6408B700E09C05 /* NGLParserMesh.m */; };
+		6099E8571B6408B700E09C05 /* NGLParserMTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7ED1B6408B700E09C05 /* NGLParserMTL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8581B6408B700E09C05 /* NGLParserMTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7EE1B6408B700E09C05 /* NGLParserMTL.m */; };
+		6099E8591B6408B700E09C05 /* NGLParserNGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7EF1B6408B700E09C05 /* NGLParserNGL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E85A1B6408B700E09C05 /* NGLParserNGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7F01B6408B700E09C05 /* NGLParserNGL.m */; };
+		6099E85B1B6408B700E09C05 /* NGLParserOBJ.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7F11B6408B700E09C05 /* NGLParserOBJ.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E85C1B6408B700E09C05 /* NGLParserOBJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7F21B6408B700E09C05 /* NGLParserOBJ.m */; };
+		6099E85D1B6408B700E09C05 /* NGLSLConstructor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7F41B6408B700E09C05 /* NGLSLConstructor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E85E1B6408B700E09C05 /* NGLSLConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7F51B6408B700E09C05 /* NGLSLConstructor.m */; };
+		6099E85F1B6408B700E09C05 /* NGLSLSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7F61B6408B700E09C05 /* NGLSLSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8601B6408B700E09C05 /* NGLSLSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7F71B6408B700E09C05 /* NGLSLSource.m */; };
+		6099E8611B6408B700E09C05 /* NGLSLVariables.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7F81B6408B700E09C05 /* NGLSLVariables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8621B6408B700E09C05 /* NGLSLVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7F91B6408B700E09C05 /* NGLSLVariables.m */; };
+		6099E8631B6408B700E09C05 /* NGLArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7FB1B6408B700E09C05 /* NGLArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8641B6408B700E09C05 /* NGLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7FC1B6408B700E09C05 /* NGLArray.m */; };
+		6099E8651B6408B700E09C05 /* NGLDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7FD1B6408B700E09C05 /* NGLDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8661B6408B700E09C05 /* NGLDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E7FE1B6408B700E09C05 /* NGLDebug.m */; };
+		6099E8671B6408B700E09C05 /* NGLGestures.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E7FF1B6408B700E09C05 /* NGLGestures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E8681B6408B700E09C05 /* NGLGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E8001B6408B700E09C05 /* NGLGestures.m */; };
+		6099E8691B6408B700E09C05 /* NGLIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E8011B6408B700E09C05 /* NGLIterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E86A1B6408B700E09C05 /* NGLRegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = 6099E8021B6408B700E09C05 /* NGLRegEx.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6099E86B1B6408B700E09C05 /* NGLRegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099E8031B6408B700E09C05 /* NGLRegEx.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6099E7951B6408B700E09C05 /* NGLEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLEase.h; sourceTree = "<group>"; };
+		6099E7961B6408B700E09C05 /* NGLEase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLEase.m; sourceTree = "<group>"; };
+		6099E7971B6408B700E09C05 /* NGLTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLTween.h; sourceTree = "<group>"; };
+		6099E7981B6408B700E09C05 /* NGLTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLTween.m; sourceTree = "<group>"; };
+		6099E79A1B6408B700E09C05 /* NGLCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLCamera.h; sourceTree = "<group>"; };
+		6099E79B1B6408B700E09C05 /* NGLCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLCamera.m; sourceTree = "<group>"; };
+		6099E79C1B6408B700E09C05 /* NGLContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLContext.h; sourceTree = "<group>"; };
+		6099E79D1B6408B700E09C05 /* NGLContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLContext.m; sourceTree = "<group>"; };
+		6099E79E1B6408B700E09C05 /* NGLCopying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLCopying.h; sourceTree = "<group>"; };
+		6099E79F1B6408B700E09C05 /* NGLCoreEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLCoreEngine.h; sourceTree = "<group>"; };
+		6099E7A01B6408B700E09C05 /* NGLCoreMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLCoreMesh.h; sourceTree = "<group>"; };
+		6099E7A11B6408B700E09C05 /* NGLCoreTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLCoreTimer.h; sourceTree = "<group>"; };
+		6099E7A21B6408B700E09C05 /* NGLDataType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLDataType.h; sourceTree = "<group>"; };
+		6099E7A31B6408B700E09C05 /* NGLError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLError.h; sourceTree = "<group>"; };
+		6099E7A41B6408B700E09C05 /* NGLError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLError.m; sourceTree = "<group>"; };
+		6099E7A51B6408B700E09C05 /* NGLFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLFunctions.h; sourceTree = "<group>"; };
+		6099E7A61B6408B700E09C05 /* NGLFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLFunctions.m; sourceTree = "<group>"; };
+		6099E7A71B6408B700E09C05 /* NGLGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLGlobal.h; sourceTree = "<group>"; };
+		6099E7A81B6408B700E09C05 /* NGLGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLGlobal.m; sourceTree = "<group>"; };
+		6099E7A91B6408B700E09C05 /* NGLGroup3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLGroup3D.h; sourceTree = "<group>"; };
+		6099E7AA1B6408B700E09C05 /* NGLGroup3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLGroup3D.m; sourceTree = "<group>"; };
+		6099E7AB1B6408B700E09C05 /* NGLMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMesh.h; sourceTree = "<group>"; };
+		6099E7AC1B6408B700E09C05 /* NGLMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMesh.m; sourceTree = "<group>"; };
+		6099E7AD1B6408B700E09C05 /* NGLMeshElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMeshElements.h; sourceTree = "<group>"; };
+		6099E7AE1B6408B700E09C05 /* NGLMeshElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMeshElements.m; sourceTree = "<group>"; };
+		6099E7AF1B6408B700E09C05 /* NGLObject3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLObject3D.h; sourceTree = "<group>"; };
+		6099E7B01B6408B700E09C05 /* NGLObject3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLObject3D.m; sourceTree = "<group>"; };
+		6099E7B11B6408B700E09C05 /* NGLRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLRuntime.h; sourceTree = "<group>"; };
+		6099E7B21B6408B700E09C05 /* NGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLTexture.h; sourceTree = "<group>"; };
+		6099E7B31B6408B700E09C05 /* NGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLTexture.m; sourceTree = "<group>"; };
+		6099E7B41B6408B700E09C05 /* NGLThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLThread.h; sourceTree = "<group>"; };
+		6099E7B51B6408B700E09C05 /* NGLThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLThread.m; sourceTree = "<group>"; };
+		6099E7B61B6408B700E09C05 /* NGLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLTimer.h; sourceTree = "<group>"; };
+		6099E7B71B6408B700E09C05 /* NGLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLTimer.m; sourceTree = "<group>"; };
+		6099E7B81B6408B700E09C05 /* NGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLView.h; sourceTree = "<group>"; };
+		6099E7B91B6408B700E09C05 /* NGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLView.m; sourceTree = "<group>"; };
+		6099E7BB1B6408B700E09C05 /* NGLFog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLFog.h; sourceTree = "<group>"; };
+		6099E7BC1B6408B700E09C05 /* NGLFog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLFog.m; sourceTree = "<group>"; };
+		6099E7BD1B6408B700E09C05 /* NGLLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLLight.h; sourceTree = "<group>"; };
+		6099E7BE1B6408B700E09C05 /* NGLLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLLight.m; sourceTree = "<group>"; };
+		6099E7BF1B6408B700E09C05 /* NGLMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMaterial.h; sourceTree = "<group>"; };
+		6099E7C01B6408B700E09C05 /* NGLMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMaterial.m; sourceTree = "<group>"; };
+		6099E7C11B6408B700E09C05 /* NGLMaterialMulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMaterialMulti.h; sourceTree = "<group>"; };
+		6099E7C21B6408B700E09C05 /* NGLMaterialMulti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMaterialMulti.m; sourceTree = "<group>"; };
+		6099E7C31B6408B700E09C05 /* NGLShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLShaders.h; sourceTree = "<group>"; };
+		6099E7C41B6408B700E09C05 /* NGLShaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLShaders.m; sourceTree = "<group>"; };
+		6099E7C51B6408B700E09C05 /* NGLShadersMulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLShadersMulti.h; sourceTree = "<group>"; };
+		6099E7C61B6408B700E09C05 /* NGLShadersMulti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLShadersMulti.m; sourceTree = "<group>"; };
+		6099E7C71B6408B700E09C05 /* NGLSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLSurface.h; sourceTree = "<group>"; };
+		6099E7C81B6408B700E09C05 /* NGLSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLSurface.m; sourceTree = "<group>"; };
+		6099E7C91B6408B700E09C05 /* NGLSurfaceMulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLSurfaceMulti.h; sourceTree = "<group>"; };
+		6099E7CA1B6408B700E09C05 /* NGLSurfaceMulti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLSurfaceMulti.m; sourceTree = "<group>"; };
+		6099E7CC1B6408B700E09C05 /* NGLES2Buffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Buffers.h; sourceTree = "<group>"; };
+		6099E7CD1B6408B700E09C05 /* NGLES2Buffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Buffers.m; sourceTree = "<group>"; };
+		6099E7CE1B6408B700E09C05 /* NGLES2Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Engine.h; sourceTree = "<group>"; };
+		6099E7CF1B6408B700E09C05 /* NGLES2Engine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Engine.m; sourceTree = "<group>"; };
+		6099E7D01B6408B700E09C05 /* NGLES2Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Functions.h; sourceTree = "<group>"; };
+		6099E7D11B6408B700E09C05 /* NGLES2Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Functions.m; sourceTree = "<group>"; };
+		6099E7D21B6408B700E09C05 /* NGLES2Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Mesh.h; sourceTree = "<group>"; };
+		6099E7D31B6408B700E09C05 /* NGLES2Mesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Mesh.m; sourceTree = "<group>"; };
+		6099E7D41B6408B700E09C05 /* NGLES2Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Polygon.h; sourceTree = "<group>"; };
+		6099E7D51B6408B700E09C05 /* NGLES2Polygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Polygon.m; sourceTree = "<group>"; };
+		6099E7D61B6408B700E09C05 /* NGLES2Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Program.h; sourceTree = "<group>"; };
+		6099E7D71B6408B700E09C05 /* NGLES2Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Program.m; sourceTree = "<group>"; };
+		6099E7D81B6408B700E09C05 /* NGLES2Textures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLES2Textures.h; sourceTree = "<group>"; };
+		6099E7D91B6408B700E09C05 /* NGLES2Textures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLES2Textures.m; sourceTree = "<group>"; };
+		6099E7DB1B6408B700E09C05 /* NGLBoundingBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLBoundingBox.h; sourceTree = "<group>"; };
+		6099E7DC1B6408B700E09C05 /* NGLBoundingBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLBoundingBox.m; sourceTree = "<group>"; };
+		6099E7DD1B6408B700E09C05 /* NGLMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMath.h; sourceTree = "<group>"; };
+		6099E7DE1B6408B700E09C05 /* NGLMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMath.m; sourceTree = "<group>"; };
+		6099E7DF1B6408B700E09C05 /* NGLMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLMatrix.h; sourceTree = "<group>"; };
+		6099E7E01B6408B700E09C05 /* NGLMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLMatrix.m; sourceTree = "<group>"; };
+		6099E7E11B6408B700E09C05 /* NGLQuaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLQuaternion.h; sourceTree = "<group>"; };
+		6099E7E21B6408B700E09C05 /* NGLQuaternion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLQuaternion.m; sourceTree = "<group>"; };
+		6099E7E31B6408B700E09C05 /* NGLVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLVector.h; sourceTree = "<group>"; };
+		6099E7E41B6408B700E09C05 /* NGLVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLVector.m; sourceTree = "<group>"; };
+		6099E7E51B6408B700E09C05 /* NinevehGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinevehGL.h; sourceTree = "<group>"; };
+		6099E7E71B6408B700E09C05 /* NGLParserDAE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserDAE.h; sourceTree = "<group>"; };
+		6099E7E81B6408B700E09C05 /* NGLParserDAE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserDAE.m; sourceTree = "<group>"; };
+		6099E7E91B6408B700E09C05 /* NGLParserImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserImage.h; sourceTree = "<group>"; };
+		6099E7EA1B6408B700E09C05 /* NGLParserImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserImage.m; sourceTree = "<group>"; };
+		6099E7EB1B6408B700E09C05 /* NGLParserMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserMesh.h; sourceTree = "<group>"; };
+		6099E7EC1B6408B700E09C05 /* NGLParserMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserMesh.m; sourceTree = "<group>"; };
+		6099E7ED1B6408B700E09C05 /* NGLParserMTL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserMTL.h; sourceTree = "<group>"; };
+		6099E7EE1B6408B700E09C05 /* NGLParserMTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserMTL.m; sourceTree = "<group>"; };
+		6099E7EF1B6408B700E09C05 /* NGLParserNGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserNGL.h; sourceTree = "<group>"; };
+		6099E7F01B6408B700E09C05 /* NGLParserNGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserNGL.m; sourceTree = "<group>"; };
+		6099E7F11B6408B700E09C05 /* NGLParserOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLParserOBJ.h; sourceTree = "<group>"; };
+		6099E7F21B6408B700E09C05 /* NGLParserOBJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLParserOBJ.m; sourceTree = "<group>"; };
+		6099E7F41B6408B700E09C05 /* NGLSLConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLSLConstructor.h; sourceTree = "<group>"; };
+		6099E7F51B6408B700E09C05 /* NGLSLConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLSLConstructor.m; sourceTree = "<group>"; };
+		6099E7F61B6408B700E09C05 /* NGLSLSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLSLSource.h; sourceTree = "<group>"; };
+		6099E7F71B6408B700E09C05 /* NGLSLSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLSLSource.m; sourceTree = "<group>"; };
+		6099E7F81B6408B700E09C05 /* NGLSLVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLSLVariables.h; sourceTree = "<group>"; };
+		6099E7F91B6408B700E09C05 /* NGLSLVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLSLVariables.m; sourceTree = "<group>"; };
+		6099E7FB1B6408B700E09C05 /* NGLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLArray.h; sourceTree = "<group>"; };
+		6099E7FC1B6408B700E09C05 /* NGLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLArray.m; sourceTree = "<group>"; };
+		6099E7FD1B6408B700E09C05 /* NGLDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLDebug.h; sourceTree = "<group>"; };
+		6099E7FE1B6408B700E09C05 /* NGLDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLDebug.m; sourceTree = "<group>"; };
+		6099E7FF1B6408B700E09C05 /* NGLGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLGestures.h; sourceTree = "<group>"; };
+		6099E8001B6408B700E09C05 /* NGLGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLGestures.m; sourceTree = "<group>"; };
+		6099E8011B6408B700E09C05 /* NGLIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLIterator.h; sourceTree = "<group>"; };
+		6099E8021B6408B700E09C05 /* NGLRegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLRegEx.h; sourceTree = "<group>"; };
+		6099E8031B6408B700E09C05 /* NGLRegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLRegEx.m; sourceTree = "<group>"; };
+		6099E86D1B6408FB00E09C05 /* NinevehGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = NinevehGL.framework; path = "/Works/Clients/db-in/Frameworks/NinevehGL/Xcode Open Source/build/NGL-iphoneos/NinevehGL.framework"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6023B5841398564200E62247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6099E7931B6408B700E09C05 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7941B6408B700E09C05 /* animation */,
+				6099E7991B6408B700E09C05 /* core */,
+				6099E7BA1B6408B700E09C05 /* effects */,
+				6099E7CB1B6408B700E09C05 /* es2 */,
+				6099E7DA1B6408B700E09C05 /* math */,
+				6099E7E51B6408B700E09C05 /* NinevehGL.h */,
+				6099E7E61B6408B700E09C05 /* parser */,
+				6099E7F31B6408B700E09C05 /* shader */,
+				6099E7FA1B6408B700E09C05 /* utils */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6099E7941B6408B700E09C05 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7951B6408B700E09C05 /* NGLEase.h */,
+				6099E7961B6408B700E09C05 /* NGLEase.m */,
+				6099E7971B6408B700E09C05 /* NGLTween.h */,
+				6099E7981B6408B700E09C05 /* NGLTween.m */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		6099E7991B6408B700E09C05 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				6099E79A1B6408B700E09C05 /* NGLCamera.h */,
+				6099E79B1B6408B700E09C05 /* NGLCamera.m */,
+				6099E79C1B6408B700E09C05 /* NGLContext.h */,
+				6099E79D1B6408B700E09C05 /* NGLContext.m */,
+				6099E79E1B6408B700E09C05 /* NGLCopying.h */,
+				6099E79F1B6408B700E09C05 /* NGLCoreEngine.h */,
+				6099E7A01B6408B700E09C05 /* NGLCoreMesh.h */,
+				6099E7A11B6408B700E09C05 /* NGLCoreTimer.h */,
+				6099E7A21B6408B700E09C05 /* NGLDataType.h */,
+				6099E7A31B6408B700E09C05 /* NGLError.h */,
+				6099E7A41B6408B700E09C05 /* NGLError.m */,
+				6099E7A51B6408B700E09C05 /* NGLFunctions.h */,
+				6099E7A61B6408B700E09C05 /* NGLFunctions.m */,
+				6099E7A71B6408B700E09C05 /* NGLGlobal.h */,
+				6099E7A81B6408B700E09C05 /* NGLGlobal.m */,
+				6099E7A91B6408B700E09C05 /* NGLGroup3D.h */,
+				6099E7AA1B6408B700E09C05 /* NGLGroup3D.m */,
+				6099E7AB1B6408B700E09C05 /* NGLMesh.h */,
+				6099E7AC1B6408B700E09C05 /* NGLMesh.m */,
+				6099E7AD1B6408B700E09C05 /* NGLMeshElements.h */,
+				6099E7AE1B6408B700E09C05 /* NGLMeshElements.m */,
+				6099E7AF1B6408B700E09C05 /* NGLObject3D.h */,
+				6099E7B01B6408B700E09C05 /* NGLObject3D.m */,
+				6099E7B11B6408B700E09C05 /* NGLRuntime.h */,
+				6099E7B21B6408B700E09C05 /* NGLTexture.h */,
+				6099E7B31B6408B700E09C05 /* NGLTexture.m */,
+				6099E7B41B6408B700E09C05 /* NGLThread.h */,
+				6099E7B51B6408B700E09C05 /* NGLThread.m */,
+				6099E7B61B6408B700E09C05 /* NGLTimer.h */,
+				6099E7B71B6408B700E09C05 /* NGLTimer.m */,
+				6099E7B81B6408B700E09C05 /* NGLView.h */,
+				6099E7B91B6408B700E09C05 /* NGLView.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		6099E7BA1B6408B700E09C05 /* effects */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7BB1B6408B700E09C05 /* NGLFog.h */,
+				6099E7BC1B6408B700E09C05 /* NGLFog.m */,
+				6099E7BD1B6408B700E09C05 /* NGLLight.h */,
+				6099E7BE1B6408B700E09C05 /* NGLLight.m */,
+				6099E7BF1B6408B700E09C05 /* NGLMaterial.h */,
+				6099E7C01B6408B700E09C05 /* NGLMaterial.m */,
+				6099E7C11B6408B700E09C05 /* NGLMaterialMulti.h */,
+				6099E7C21B6408B700E09C05 /* NGLMaterialMulti.m */,
+				6099E7C31B6408B700E09C05 /* NGLShaders.h */,
+				6099E7C41B6408B700E09C05 /* NGLShaders.m */,
+				6099E7C51B6408B700E09C05 /* NGLShadersMulti.h */,
+				6099E7C61B6408B700E09C05 /* NGLShadersMulti.m */,
+				6099E7C71B6408B700E09C05 /* NGLSurface.h */,
+				6099E7C81B6408B700E09C05 /* NGLSurface.m */,
+				6099E7C91B6408B700E09C05 /* NGLSurfaceMulti.h */,
+				6099E7CA1B6408B700E09C05 /* NGLSurfaceMulti.m */,
+			);
+			path = effects;
+			sourceTree = "<group>";
+		};
+		6099E7CB1B6408B700E09C05 /* es2 */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7CC1B6408B700E09C05 /* NGLES2Buffers.h */,
+				6099E7CD1B6408B700E09C05 /* NGLES2Buffers.m */,
+				6099E7CE1B6408B700E09C05 /* NGLES2Engine.h */,
+				6099E7CF1B6408B700E09C05 /* NGLES2Engine.m */,
+				6099E7D01B6408B700E09C05 /* NGLES2Functions.h */,
+				6099E7D11B6408B700E09C05 /* NGLES2Functions.m */,
+				6099E7D21B6408B700E09C05 /* NGLES2Mesh.h */,
+				6099E7D31B6408B700E09C05 /* NGLES2Mesh.m */,
+				6099E7D41B6408B700E09C05 /* NGLES2Polygon.h */,
+				6099E7D51B6408B700E09C05 /* NGLES2Polygon.m */,
+				6099E7D61B6408B700E09C05 /* NGLES2Program.h */,
+				6099E7D71B6408B700E09C05 /* NGLES2Program.m */,
+				6099E7D81B6408B700E09C05 /* NGLES2Textures.h */,
+				6099E7D91B6408B700E09C05 /* NGLES2Textures.m */,
+			);
+			path = es2;
+			sourceTree = "<group>";
+		};
+		6099E7DA1B6408B700E09C05 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7DB1B6408B700E09C05 /* NGLBoundingBox.h */,
+				6099E7DC1B6408B700E09C05 /* NGLBoundingBox.m */,
+				6099E7DD1B6408B700E09C05 /* NGLMath.h */,
+				6099E7DE1B6408B700E09C05 /* NGLMath.m */,
+				6099E7DF1B6408B700E09C05 /* NGLMatrix.h */,
+				6099E7E01B6408B700E09C05 /* NGLMatrix.m */,
+				6099E7E11B6408B700E09C05 /* NGLQuaternion.h */,
+				6099E7E21B6408B700E09C05 /* NGLQuaternion.m */,
+				6099E7E31B6408B700E09C05 /* NGLVector.h */,
+				6099E7E41B6408B700E09C05 /* NGLVector.m */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		6099E7E61B6408B700E09C05 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7E71B6408B700E09C05 /* NGLParserDAE.h */,
+				6099E7E81B6408B700E09C05 /* NGLParserDAE.m */,
+				6099E7E91B6408B700E09C05 /* NGLParserImage.h */,
+				6099E7EA1B6408B700E09C05 /* NGLParserImage.m */,
+				6099E7EB1B6408B700E09C05 /* NGLParserMesh.h */,
+				6099E7EC1B6408B700E09C05 /* NGLParserMesh.m */,
+				6099E7ED1B6408B700E09C05 /* NGLParserMTL.h */,
+				6099E7EE1B6408B700E09C05 /* NGLParserMTL.m */,
+				6099E7EF1B6408B700E09C05 /* NGLParserNGL.h */,
+				6099E7F01B6408B700E09C05 /* NGLParserNGL.m */,
+				6099E7F11B6408B700E09C05 /* NGLParserOBJ.h */,
+				6099E7F21B6408B700E09C05 /* NGLParserOBJ.m */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+		6099E7F31B6408B700E09C05 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7F41B6408B700E09C05 /* NGLSLConstructor.h */,
+				6099E7F51B6408B700E09C05 /* NGLSLConstructor.m */,
+				6099E7F61B6408B700E09C05 /* NGLSLSource.h */,
+				6099E7F71B6408B700E09C05 /* NGLSLSource.m */,
+				6099E7F81B6408B700E09C05 /* NGLSLVariables.h */,
+				6099E7F91B6408B700E09C05 /* NGLSLVariables.m */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
+		6099E7FA1B6408B700E09C05 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6099E7FB1B6408B700E09C05 /* NGLArray.h */,
+				6099E7FC1B6408B700E09C05 /* NGLArray.m */,
+				6099E7FD1B6408B700E09C05 /* NGLDebug.h */,
+				6099E7FE1B6408B700E09C05 /* NGLDebug.m */,
+				6099E7FF1B6408B700E09C05 /* NGLGestures.h */,
+				6099E8001B6408B700E09C05 /* NGLGestures.m */,
+				6099E8011B6408B700E09C05 /* NGLIterator.h */,
+				6099E8021B6408B700E09C05 /* NGLRegEx.h */,
+				6099E8031B6408B700E09C05 /* NGLRegEx.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		60BFDEFB1367CAD200838581 = {
+			isa = PBXGroup;
+			children = (
+				6099E7931B6408B700E09C05 /* Source */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6023B5941398566600E62247 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6099E8511B6408B700E09C05 /* NGLParserDAE.h in Headers */,
+				6099E8341B6408B700E09C05 /* NGLSurface.h in Headers */,
+				6099E8441B6408B700E09C05 /* NGLES2Textures.h in Headers */,
+				6099E80A1B6408B700E09C05 /* NGLContext.h in Headers */,
+				6099E81F1B6408B700E09C05 /* NGLRuntime.h in Headers */,
+				6099E84C1B6408B700E09C05 /* NGLQuaternion.h in Headers */,
+				6099E8671B6408B700E09C05 /* NGLGestures.h in Headers */,
+				6099E83E1B6408B700E09C05 /* NGLES2Mesh.h in Headers */,
+				6099E8531B6408B700E09C05 /* NGLParserImage.h in Headers */,
+				6099E8241B6408B700E09C05 /* NGLTimer.h in Headers */,
+				6099E8651B6408B700E09C05 /* NGLDebug.h in Headers */,
+				6099E8481B6408B700E09C05 /* NGLMath.h in Headers */,
+				6099E82C1B6408B700E09C05 /* NGLMaterial.h in Headers */,
+				6099E8501B6408B700E09C05 /* NinevehGL.h in Headers */,
+				6099E8361B6408B700E09C05 /* NGLSurfaceMulti.h in Headers */,
+				6099E8691B6408B700E09C05 /* NGLIterator.h in Headers */,
+				6099E80C1B6408B700E09C05 /* NGLCopying.h in Headers */,
+				6099E81D1B6408B700E09C05 /* NGLObject3D.h in Headers */,
+				6099E85D1B6408B700E09C05 /* NGLSLConstructor.h in Headers */,
+				6099E80E1B6408B700E09C05 /* NGLCoreMesh.h in Headers */,
+				6099E86A1B6408B700E09C05 /* NGLRegEx.h in Headers */,
+				6099E84E1B6408B700E09C05 /* NGLVector.h in Headers */,
+				6099E8461B6408B700E09C05 /* NGLBoundingBox.h in Headers */,
+				6099E8321B6408B700E09C05 /* NGLShadersMulti.h in Headers */,
+				6099E8551B6408B700E09C05 /* NGLParserMesh.h in Headers */,
+				6099E83A1B6408B700E09C05 /* NGLES2Engine.h in Headers */,
+				6099E84A1B6408B700E09C05 /* NGLMatrix.h in Headers */,
+				6099E8401B6408B700E09C05 /* NGLES2Polygon.h in Headers */,
+				6099E83C1B6408B700E09C05 /* NGLES2Functions.h in Headers */,
+				6099E8191B6408B700E09C05 /* NGLMesh.h in Headers */,
+				6099E8421B6408B700E09C05 /* NGLES2Program.h in Headers */,
+				6099E8591B6408B700E09C05 /* NGLParserNGL.h in Headers */,
+				6099E8631B6408B700E09C05 /* NGLArray.h in Headers */,
+				6099E8151B6408B700E09C05 /* NGLGlobal.h in Headers */,
+				6099E8611B6408B700E09C05 /* NGLSLVariables.h in Headers */,
+				6099E82E1B6408B700E09C05 /* NGLMaterialMulti.h in Headers */,
+				6099E85F1B6408B700E09C05 /* NGLSLSource.h in Headers */,
+				6099E85B1B6408B700E09C05 /* NGLParserOBJ.h in Headers */,
+				6099E8261B6408B700E09C05 /* NGLView.h in Headers */,
+				6099E8061B6408B700E09C05 /* NGLTween.h in Headers */,
+				6099E80D1B6408B700E09C05 /* NGLCoreEngine.h in Headers */,
+				6099E8571B6408B700E09C05 /* NGLParserMTL.h in Headers */,
+				6099E8221B6408B700E09C05 /* NGLThread.h in Headers */,
+				6099E81B1B6408B700E09C05 /* NGLMeshElements.h in Headers */,
+				6099E8081B6408B700E09C05 /* NGLCamera.h in Headers */,
+				6099E82A1B6408B700E09C05 /* NGLLight.h in Headers */,
+				6099E8041B6408B700E09C05 /* NGLEase.h in Headers */,
+				6099E8281B6408B700E09C05 /* NGLFog.h in Headers */,
+				6099E8201B6408B700E09C05 /* NGLTexture.h in Headers */,
+				6099E8381B6408B700E09C05 /* NGLES2Buffers.h in Headers */,
+				6099E8131B6408B700E09C05 /* NGLFunctions.h in Headers */,
+				6099E8301B6408B700E09C05 /* NGLShaders.h in Headers */,
+				6099E8111B6408B700E09C05 /* NGLError.h in Headers */,
+				6099E8101B6408B700E09C05 /* NGLDataType.h in Headers */,
+				6099E80F1B6408B700E09C05 /* NGLCoreTimer.h in Headers */,
+				6099E8171B6408B700E09C05 /* NGLGroup3D.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6023B5861398564200E62247 /* NinevehGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6023B5921398564200E62247 /* Build configuration list for PBXNativeTarget "NinevehGL" */;
+			buildPhases = (
+				6023B5831398564200E62247 /* Sources */,
+				6023B5841398564200E62247 /* Frameworks */,
+				6023B5851398564200E62247 /* Resources */,
+				6023B5941398566600E62247 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NinevehGL;
+			productName = NinevehGL;
+			productReference = 6099E86D1B6408FB00E09C05 /* NinevehGL.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60BFDEFD1367CAD200838581 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "DB-Interactive";
+			};
+			buildConfigurationList = 60BFDF001367CAD200838581 /* Build configuration list for PBXProject "NinevehGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 60BFDEFB1367CAD200838581;
+			productRefGroup = 60BFDEFB1367CAD200838581;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6023B5861398564200E62247 /* NinevehGL */,
+				607ABBDC136A7EE400AD0AF6 /* Build All */,
+				60E8BF6C13C6C017002FDBBC /* Build Docs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6023B5851398564200E62247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		607ABBE0136A7EEC00AD0AF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=NinevehGL\nWRK_DIR=build\nDEVICE_DIR=\"${WRK_DIR}/NGL-iphoneos/${FMK_NAME}.framework\"\nSIMULATOR_DIR=\"${WRK_DIR}/NGL-iphonesimulator/${FMK_NAME}.framework\"\nINSTALL_DIR=\"${LOCAL_DEVELOPER_DIR}/Xcode/Templates/Project Templates/NinevehGL/NinevehGL Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\n#INSTALL_DIR=\"${SRCROOT}/Products/${FMK_NAME}.framework\"\n\n# Building both architectures.\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphoneos\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\n    echo \"Cleaning existing framework...\"\n    echo \"${FMK_VERSION}\"\n    rm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Headers\"\n\n# Copies the header files to the final product folder.\nditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
+		};
+		60E8BF7013C6C01B002FDBBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/../Docs/appledoc/appledoc\" \\\n--templates \"${PROJECT_DIR}/../Docs/appledoc/Templates\" \\\n--output \"${PROJECT_DIR}/../Docs/NinevehGL\" \\\n--docset-feed-url \"http://nineveh.gl/src/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://nineveh.gl/src/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://nineveh.gl/docs/index.shtml\" \\\n--project-name \"NinevehGL\" \\\n--project-company \"db-in\" \\\n--project-version \"0.9.3\" \\\n--company-id \"com.db-in\" \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore \"es2\" \\\n--ignore \"parser\" \\\n--ignore \"primitives\" \\\n--ignore \"physics\" \\\n--ignore UnitTest \\\n--keep-intermediate-files \\\n--publish-docset \\\n--crossref-format \"#%@#\" \\\n\"${PROJECT_DIR}/NinevehGL Engine/Source\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6023B5831398564200E62247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6099E85A1B6408B700E09C05 /* NGLParserNGL.m in Sources */,
+				6099E8291B6408B700E09C05 /* NGLFog.m in Sources */,
+				6099E8051B6408B700E09C05 /* NGLEase.m in Sources */,
+				6099E8451B6408B700E09C05 /* NGLES2Textures.m in Sources */,
+				6099E8391B6408B700E09C05 /* NGLES2Buffers.m in Sources */,
+				6099E8211B6408B700E09C05 /* NGLTexture.m in Sources */,
+				6099E83D1B6408B700E09C05 /* NGLES2Functions.m in Sources */,
+				6099E84B1B6408B700E09C05 /* NGLMatrix.m in Sources */,
+				6099E8231B6408B700E09C05 /* NGLThread.m in Sources */,
+				6099E8371B6408B700E09C05 /* NGLSurfaceMulti.m in Sources */,
+				6099E8431B6408B700E09C05 /* NGLES2Program.m in Sources */,
+				6099E8251B6408B700E09C05 /* NGLTimer.m in Sources */,
+				6099E8541B6408B700E09C05 /* NGLParserImage.m in Sources */,
+				6099E80B1B6408B700E09C05 /* NGLContext.m in Sources */,
+				6099E8311B6408B700E09C05 /* NGLShaders.m in Sources */,
+				6099E8661B6408B700E09C05 /* NGLDebug.m in Sources */,
+				6099E82D1B6408B700E09C05 /* NGLMaterial.m in Sources */,
+				6099E8681B6408B700E09C05 /* NGLGestures.m in Sources */,
+				6099E8121B6408B700E09C05 /* NGLError.m in Sources */,
+				6099E8641B6408B700E09C05 /* NGLArray.m in Sources */,
+				6099E83B1B6408B700E09C05 /* NGLES2Engine.m in Sources */,
+				6099E8491B6408B700E09C05 /* NGLMath.m in Sources */,
+				6099E84D1B6408B700E09C05 /* NGLQuaternion.m in Sources */,
+				6099E83F1B6408B700E09C05 /* NGLES2Mesh.m in Sources */,
+				6099E8141B6408B700E09C05 /* NGLFunctions.m in Sources */,
+				6099E84F1B6408B700E09C05 /* NGLVector.m in Sources */,
+				6099E8521B6408B700E09C05 /* NGLParserDAE.m in Sources */,
+				6099E8181B6408B700E09C05 /* NGLGroup3D.m in Sources */,
+				6099E85E1B6408B700E09C05 /* NGLSLConstructor.m in Sources */,
+				6099E8581B6408B700E09C05 /* NGLParserMTL.m in Sources */,
+				6099E8351B6408B700E09C05 /* NGLSurface.m in Sources */,
+				6099E8621B6408B700E09C05 /* NGLSLVariables.m in Sources */,
+				6099E81A1B6408B700E09C05 /* NGLMesh.m in Sources */,
+				6099E86B1B6408B700E09C05 /* NGLRegEx.m in Sources */,
+				6099E81E1B6408B700E09C05 /* NGLObject3D.m in Sources */,
+				6099E8561B6408B700E09C05 /* NGLParserMesh.m in Sources */,
+				6099E82F1B6408B700E09C05 /* NGLMaterialMulti.m in Sources */,
+				6099E85C1B6408B700E09C05 /* NGLParserOBJ.m in Sources */,
+				6099E8601B6408B700E09C05 /* NGLSLSource.m in Sources */,
+				6099E8091B6408B700E09C05 /* NGLCamera.m in Sources */,
+				6099E8271B6408B700E09C05 /* NGLView.m in Sources */,
+				6099E81C1B6408B700E09C05 /* NGLMeshElements.m in Sources */,
+				6099E8071B6408B700E09C05 /* NGLTween.m in Sources */,
+				6099E8471B6408B700E09C05 /* NGLBoundingBox.m in Sources */,
+				6099E82B1B6408B700E09C05 /* NGLLight.m in Sources */,
+				6099E8411B6408B700E09C05 /* NGLES2Polygon.m in Sources */,
+				6099E8331B6408B700E09C05 /* NGLShadersMulti.m in Sources */,
+				6099E8161B6408B700E09C05 /* NGLGlobal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6023B5901398564200E62247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/NGL$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/NGL$(EFFECTIVE_PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = stabs;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_PREPROCESS = NO;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		6023B5911398564200E62247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/NGL$(EFFECTIVE_PLATFORM_NAME)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/NGL$(EFFECTIVE_PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = stabs;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_PREPROCESS = NO;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		607ABBDE136A7EE400AD0AF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		607ABBDF136A7EE400AD0AF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		60BFDF2B1367CAD200838581 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		60BFDF2C1367CAD200838581 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		60E8BF6E13C6C017002FDBBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		60E8BF6F13C6C017002FDBBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6023B5921398564200E62247 /* Build configuration list for PBXNativeTarget "NinevehGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6023B5901398564200E62247 /* Debug */,
+				6023B5911398564200E62247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607ABBDD136A7EE400AD0AF6 /* Build configuration list for PBXAggregateTarget "Build All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607ABBDE136A7EE400AD0AF6 /* Debug */,
+				607ABBDF136A7EE400AD0AF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60BFDF001367CAD200838581 /* Build configuration list for PBXProject "NinevehGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60BFDF2B1367CAD200838581 /* Debug */,
+				60BFDF2C1367CAD200838581 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60E8BF6D13C6C017002FDBBC /* Build configuration list for PBXAggregateTarget "Build Docs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E8BF6E13C6C017002FDBBC /* Debug */,
+				60E8BF6F13C6C017002FDBBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60BFDEFD1367CAD200838581 /* Project object */;
+}

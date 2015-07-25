@@ -1,0 +1,16 @@
+PODS:
+  - NinevehGL (0.9.3):
+    - NinevehGL/Core (= 0.9.3)
+  - NinevehGL/Core (0.9.3)
+
+DEPENDENCIES:
+  - NinevehGL (from `../`)
+
+EXTERNAL SOURCES:
+  NinevehGL:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NinevehGL: 5160507f9f0ffc5ea8c615707986bdbd7c458014
+
+COCOAPODS: 0.36.4

@@ -6,6 +6,10 @@
 [![CI Status](https://img.shields.io/travis/NinevehGL/NinevehGL.svg?style=flat)](https://travis-ci.org/NinevehGL/NinevehGL)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+## Oficial website
+
+You can find more info, tutorials, sample project and a community forum at [http://nineveh.gl](http://nineveh.gl)
+
 ## Installation
 
 Nippur is compatible with iOS 7 or later.
@@ -14,13 +18,13 @@ it, simply add the following line to your Podfile:
 
 ![NinevehGL](http://nineveh.gl/imgs/ninevehgl_icon_152.png)
 
-```ruby
-pod "Nippur"
+```
+pod "NinevehGL"
 ```
 
 Now just add to your Prefix Header (.pch):
 
-```objc
+```
 #import "NinevehGL.h"
 ```
 

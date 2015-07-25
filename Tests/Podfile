@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs'
+
+workspace '../NinevehGL'
+xcodeproj 'NinevehGL Tests'
+
+def import_pods
+  pod 'NinevehGL', :path => '../'
+end
+
+target :ios do
+  platform :ios, '7.0'
+  link_with 'Unit iOS'
+  import_pods
+end
