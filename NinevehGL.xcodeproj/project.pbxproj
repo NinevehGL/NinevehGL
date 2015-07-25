@@ -243,7 +243,7 @@
 		6099E8011B6408B700E09C05 /* NGLIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLIterator.h; sourceTree = "<group>"; };
 		6099E8021B6408B700E09C05 /* NGLRegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGLRegEx.h; sourceTree = "<group>"; };
 		6099E8031B6408B700E09C05 /* NGLRegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NGLRegEx.m; sourceTree = "<group>"; };
-		6099E86D1B6408FB00E09C05 /* NinevehGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = NinevehGL.framework; path = "/Works/Clients/db-in/Frameworks/NinevehGL/Xcode Open Source/build/NGL-iphoneos/NinevehGL.framework"; sourceTree = "<absolute>"; };
+		6099E86F1B641F0C00E09C05 /* NinevehGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinevehGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				6099E7931B6408B700E09C05 /* Source */,
+				6099E86F1B641F0C00E09C05 /* NinevehGL.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -523,7 +524,7 @@
 			);
 			name = NinevehGL;
 			productName = NinevehGL;
-			productReference = 6099E86D1B6408FB00E09C05 /* NinevehGL.framework */;
+			productReference = 6099E86F1B641F0C00E09C05 /* NinevehGL.framework */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -576,7 +577,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=NinevehGL\nWRK_DIR=build\nDEVICE_DIR=\"${WRK_DIR}/NGL-iphoneos/${FMK_NAME}.framework\"\nSIMULATOR_DIR=\"${WRK_DIR}/NGL-iphonesimulator/${FMK_NAME}.framework\"\nINSTALL_DIR=\"${LOCAL_DEVELOPER_DIR}/Xcode/Templates/Project Templates/NinevehGL/NinevehGL Base.xctemplate/Frameworks/${FMK_NAME}.framework\"\n#INSTALL_DIR=\"${SRCROOT}/Products/${FMK_NAME}.framework\"\n\n# Building both architectures.\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphoneos\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\n    echo \"Cleaning existing framework...\"\n    echo \"${FMK_VERSION}\"\n    rm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Headers\"\n\n# Copies the header files to the final product folder.\nditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=NinevehGL\nWRK_DIR=build\nDEVICE_DIR=\"${WRK_DIR}/NGL-iphoneos/${FMK_NAME}.framework\"\nSIMULATOR_DIR=\"${WRK_DIR}/NGL-iphonesimulator/${FMK_NAME}.framework\"\nINSTALL_DIR=\"${SRCROOT}/Products/${FMK_NAME}.framework\"\n\n# Building both architectures.\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphoneos\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"NinevehGL\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\n    echo \"Cleaning existing framework...\"\n    echo \"${FMK_VERSION}\"\n    rm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Headers\"\n\n# Copies the header files to the final product folder.\nditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
 		};
 		60E8BF7013C6C01B002FDBBC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
