@@ -14,7 +14,7 @@
     "NinevehGL": "ngl@nineveh.gl"
   },
   "source": {
-    "git": "https://github.com/dineybomfim/Nippur.git",
+    "git": "https://github.com/NinevehGL/NinevehGL.git",
     "tag": "0.9.3",
     "submodules": true
   },

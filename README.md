@@ -12,8 +12,8 @@ You can find more info, tutorials, sample project and a community forum at [http
 
 ## Installation
 
-Nippur is compatible with iOS 7 or later.
-Nippur is available through [CocoaPods](http://cocoapods.org/pods/NinevehGL). To install
+NinevehGL is compatible with iOS 7 or later.
+NinevehGL is available through [CocoaPods](http://cocoapods.org/pods/NinevehGL). To install
 it, simply add the following line to your Podfile:
 
 ![NinevehGL](http://nineveh.gl/imgs/ninevehgl_icon_152.png)
@@ -38,7 +38,7 @@ Now just add to your Prefix Header (.pch):
 ### 0.9.9 (future)
 
 - Physics system
- 
+
 ### 0.9.8 (future)
 
 - Particle system
@@ -47,8 +47,7 @@ Now just add to your Prefix Header (.pch):
 
 - Real time Shadow and Reflections.
 - Bone, Rigging and Animations.
-- Mesh M 
-orph.
+- Mesh Morph.
 
 ### 0.9.6 (future)
 
@@ -60,8 +59,7 @@ orph.
 
 - Swift made
 - Modular (Packages)
-- Nodes es.
-jects
+- Nodes
 
 ### 0.9.4 (future)
 
@@ -138,4 +136,4 @@ NinevehGL, ngl@nineveh.gl
 
 ## License
 
-Nippur is available under the MIT license. See the LICENSE file for more info.
+This software is available under the MIT license. See the LICENSE file for more info.
