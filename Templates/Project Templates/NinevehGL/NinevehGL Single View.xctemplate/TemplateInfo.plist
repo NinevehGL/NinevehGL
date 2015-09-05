@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		
+		<!------------------------------
+		            Header
+        ------------------------------->
+		
+		<key>Ancestors</key>
+		<array>
+			<string>com.db-in.NinevehGL.Base</string>
+		</array>
+		
+		<key>Identifier</key>
+		<string>com.db-in.NinevehGL.SingleView</string>
+		
+		<key>Kind</key>
+		<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+		
+		<key>Concrete</key>
+		<true/>
+		
+		<key>Description</key>
+		<string>This template provides a starting point for a NinevehGL basic application. It provides a view which shows a 3D cube.</string>
+		<!------------------------------
+		          User Options
+        ------------------------------->
+		
+		<key>Options</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>nglViewMode</string>
+				<key>Default</key>
+				<string>XIB Files</string>
+				<key>Description</key>
+				<string>The view construction mode for NinevehGL.</string>
+				<key>Name</key>
+				<string>NinevehGL View Mode</string>
+				<key>SortOrder</key>
+				<integer>1</integer>
+				<key>Type</key>
+				<string>popup</string>
+				<key>Units</key>
+				<dict>
+                    <!------------------------------ View Mode - Using XIB ------------------------------->
+					<key>XIB Files</key>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+                        
+							<key>Resources/XIBs/___VARIABLE_classPrefix:identifier___ViewController_iPhone.xib</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Resources</string>
+									<string>XIBs</string>
+								</array>
+								<key>Path</key>
+								<string>Resources/XIBs/ViewController_iPhone.xib</string>
+							</dict>
+							
+							<key>Resources/XIBs/___VARIABLE_classPrefix:identifier___ViewController_iPad.xib</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Resources</string>
+									<string>XIBs</string>
+								</array>
+								<key>Path</key>
+								<string>Resources/XIBs/ViewController_iPad.xib</string>
+							</dict>
+							
+							<key>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.m</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Sources</string>
+									<string>Controllers</string>
+								</array>
+								<key>Path</key>
+								<string>Sources/Controllers/AppDelegate_xib.m</string>
+							</dict>
+                            
+                            <key>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.m</key>
+                            <dict>
+                                <key>Group</key>
+                                <array>
+                                    <string>Sources</string>
+                                    <string>Controllers</string>
+                                </array>
+                                <key>Path</key>
+                                <string>Sources/Controllers/ViewController_xib.m</string>
+                            </dict>
+							
+						</dict>
+						
+						<key>Nodes</key>
+						<array>
+							<string>Resources/XIBs/___VARIABLE_classPrefix:identifier___ViewController_iPhone.xib</string>
+							<string>Resources/XIBs/___VARIABLE_classPrefix:identifier___ViewController_iPad.xib</string>
+						</array>
+					</dict>
+                    
+                    <!------------------------------ View Mode - Using Pure Code ------------------------------->
+					<key>Pure Code</key>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+                        
+							<key>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.m</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Sources</string>
+									<string>Controllers</string>
+								</array>
+								<key>Path</key>
+								<string>Sources/Controllers/AppDelegate_code.m</string>
+							</dict>
+							
+                            <key>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.m</key>
+                            <dict>
+                                <key>Group</key>
+                                <array>
+                                    <string>Sources</string>
+                                    <string>Controllers</string>
+                                </array>
+                                <key>Path</key>
+                                <string>Sources/Controllers/ViewController_code.m</string>
+                            </dict>
+            
+						</dict>
+					</dict>
+                    
+                    <!------------------------------ View Mode - Using Storyboard ------------------------------->
+					<key>Storyboard</key>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+                            
+                            <key>Resources/Supporting Files/Info.plist</key>
+                            <dict>
+                                <key>Group</key>
+                                <array>
+                                    <string>Resources</string>
+                                    <string>Supporting Files</string>
+                                </array>
+                                <key>Path</key>
+                                <string>Resources/Supporting Files/Info_storyboard.plist</string>
+                                <key>TargetIndices</key>
+                                <array/>
+                            </dict>
+                            
+							<key>Resources/Storyboard/___VARIABLE_classPrefix:identifier___Storyboard_iPhone.storyboard</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Resources</string>
+									<string>Storyboard</string>
+								</array>
+								<key>Path</key>
+								<string>Resources/Storyboard/Storyboard_iPhone.storyboard</string>
+							</dict>
+                            
+                            <key>Resources/Storyboard/___VARIABLE_classPrefix:identifier___Storyboard_iPad.storyboard</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Resources</string>
+									<string>Storyboard</string>
+								</array>
+								<key>Path</key>
+								<string>Resources/Storyboard/Storyboard_iPad.storyboard</string>
+							</dict>
+							
+							<key>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.m</key>
+							<dict>
+								<key>Group</key>
+								<array>
+									<string>Sources</string>
+									<string>Controllers</string>
+								</array>
+								<key>Path</key>
+								<string>Sources/Controllers/AppDelegate_storyboard.m</string>
+							</dict>
+							
+                            <key>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.m</key>
+                            <dict>
+                                <key>Group</key>
+                                <array>
+                                    <string>Sources</string>
+                                    <string>Controllers</string>
+                                </array>
+                                <key>Path</key>
+                                <string>Sources/Controllers/ViewController_xib.m</string>
+                            </dict>
+                            
+						</dict>
+                        
+                        <key>Nodes</key>
+						<array>
+                            <string>Resources/Storyboard/___VARIABLE_classPrefix:identifier___Storyboard_iPhone.storyboard</string>
+							<string>Resources/Storyboard/___VARIABLE_classPrefix:identifier___Storyboard_iPad.storyboard</string>
+						</array>
+                        
+					</dict>
+                    
+				</dict>
+			</dict>
+			
+		</array>
+		
+		<!------------------------------
+		          Adding Files
+        ------------------------------->
+		
+		<key>Definitions</key>
+		<dict>
+			<key>Resources/3D/Cube/cube.obj</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube.obj</string>
+			</dict>
+			<key>Resources/3D/Cube/cube.mtl</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube.mtl</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_back.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_back.jpg</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_bottom.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_bottom.jpg</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_front.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_front.jpg</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_left.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_left.jpg</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_right.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_right.jpg</string>
+			</dict>
+			<key>Resources/3D/Cube/cube_top.jpg</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Resources</string>
+					<string>3D</string>
+					<string>Cube</string>
+				</array>
+				<key>Path</key>
+				<string>Resources/3D/Cube/cube_top.jpg</string>
+			</dict>
+            
+            <!------------------------------ View Mode Dependent ------------------------------->
+            
+            <key>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.h</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Sources</string>
+					<string>Controllers</string>
+				</array>
+				<key>Path</key>
+				<string>Sources/Controllers/AppDelegate.h</string>
+				<key>TargetIndices</key>
+				<array/>
+			</dict>
+			
+			<key>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.h</key>
+			<dict>
+				<key>Group</key>
+				<array>
+					<string>Sources</string>
+					<string>Controllers</string>
+				</array>
+				<key>Path</key>
+				<string>Sources/Controllers/ViewController.h</string>
+				<key>TargetIndices</key>
+				<array/>
+			</dict>
+            
+		</dict>
+		
+		<key>Nodes</key>
+		<array>
+			<string>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.h</string>
+			<string>Sources/Controllers/___VARIABLE_classPrefix:identifier___AppDelegate.m</string>
+			<string>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.h</string>
+			<string>Sources/Controllers/___VARIABLE_classPrefix:identifier___ViewController.m</string>
+			<string>Resources/3D/Cube/cube.obj</string>
+			<string>Resources/3D/Cube/cube.mtl</string>
+			<string>Resources/3D/Cube/cube_back.jpg</string>
+			<string>Resources/3D/Cube/cube_bottom.jpg</string>
+			<string>Resources/3D/Cube/cube_front.jpg</string>
+			<string>Resources/3D/Cube/cube_left.jpg</string>
+			<string>Resources/3D/Cube/cube_right.jpg</string>
+			<string>Resources/3D/Cube/cube_top.jpg</string>
+		</array>
+	</dict>
+</plist>

@@ -1,0 +1,86 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 13.01.2011 22:41:08
+
+newmtl 04___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_front.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_front.jpg
+
+newmtl 07___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_top.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_top.jpg
+
+newmtl 06___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_right.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_right.jpg
+
+newmtl 02___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_back.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_back.jpg
+
+newmtl 03___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_bottom.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_bottom.jpg
+
+newmtl 05___Default
+Ns 9.999999
+Ni 1.500000
+d 1.000000
+Tr 0.000000
+Tf 1.000000 1.000000 1.000000 
+illum 2
+Ka 0.588235 0.588235 0.588235
+Kd 0.588235 0.588235 0.588235
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+map_Ka /Clients/DB-Interactively/Genius-Simon/3D/cube_left.jpg
+map_Kd /Clients/DB-Interactively/Genius-Simon/3D/cube_left.jpg
