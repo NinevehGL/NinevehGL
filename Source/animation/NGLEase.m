@@ -174,8 +174,8 @@ float nglEaseElasticIn(float begin, float change, float time, float duration)
 	{
 		return begin + change;
 	}
-	
-	return -x * powf(2.0f, 10.0f * --time) * sinf((time * duration - z) * kNGL_2PI / y) + begin;
+	--time;
+	return -x * powf(2.0f, 10.0f * time) * sinf((time * duration - z) * kNGL_2PI / y) + begin;
 }
 
 float nglEaseElasticInOut(float begin, float change, float time, float duration)
