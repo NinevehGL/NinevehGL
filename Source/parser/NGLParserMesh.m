@@ -62,10 +62,10 @@ The number of unique faces in your file should not exceed it.";
 
 // Checks the crease angle for the normal calculations.
 // This function creates and divides the normals to a vertex recursively.
-static unsigned int creaseAngle(unsigned int index,
+static UInt32 creaseAngle(UInt32 index,
 								NGLvec3 vector,
 								NGLvec3 **buffer,
-								unsigned int *count,
+								UInt32 *count,
 								NSMutableDictionary *list)
 {
 	NSNumber *newIndex, *oldIndex;
@@ -323,11 +323,11 @@ static unsigned int creaseAngle(unsigned int index,
 
 - (void) defineTangentSpace
 {
-	unsigned int i, length;
-	unsigned int j, lengthJ;
+	UInt32 i, length;
+	UInt32 j, lengthJ;
 	
-	unsigned int *newFaces, *outFaces;
-	unsigned int oldFaceStride = _facesStride;
+	UInt32 *newFaces, *outFaces;
+	UInt32 oldFaceStride = _facesStride;
 	
 	int i1, i2, i3;
 	int vi1, vi2, vi3;
@@ -648,16 +648,16 @@ static unsigned int creaseAngle(unsigned int index,
 
 - (void) defineStructure
 {
-	unsigned int i, lengthI;
-	unsigned int j, lengthJ;
-	unsigned int index, faceIndex;
+	UInt32 i, lengthI;
+	UInt32 j, lengthJ;
+	UInt32 index, faceIndex;
 	
 	NGLElement *element;
-	unsigned int eIndex, eStart;
+	UInt32 eIndex, eStart;
 	float *eValue;
 	
 	float *outStructure;
-	unsigned int *outIndex;
+	UInt32 *outIndex;
 	
 	char *faceData;
 	char *faceCString;
@@ -706,7 +706,7 @@ static unsigned int creaseAngle(unsigned int index,
 		// To avoid that, it's necessary to add a slash: 11/1 and 1/11 is now different.
 		while ((element = [_meshElements nextIterator]))
 		{
-			sprintf(faceData, "%i/", _faces[faceIndex + (*element).offsetInFace]);
+			sprintf(faceData, "%i/", (unsigned int)_faces[faceIndex + (*element).offsetInFace]);
 			strcat(faceCString, faceData);
 		}
 		
@@ -719,7 +719,7 @@ static unsigned int creaseAngle(unsigned int index,
 		if (indexNum == nil)
 		{
 			// Adds the new face string.
-			index = (unsigned int)[faceProcessed count];
+			index = (UInt32)[faceProcessed count];
 			[faceProcessed setObject:[NSNumber numberWithUnsignedInt:index] forKey:faceString];
 			
 			// Reallocates the array of structures and sets a pointer to the following process.

@@ -242,9 +242,9 @@ static void emptyCoreEngine(id <NGLCoreEngine> coreEngine, BOOL background)
 	}
 }
 
-- (unsigned int) framebuffer { return _engine.framebuffer; }
+- (UInt32) framebuffer { return _engine.framebuffer; }
 
-- (unsigned int) renderbuffer { return _engine.renderbuffer; }
+- (UInt32) renderbuffer { return _engine.renderbuffer; }
 
 - (NGLvec4 *) colorPointer { return &_color; }
 
@@ -573,7 +573,11 @@ static void emptyCoreEngine(id <NGLCoreEngine> coreEngine, BOOL background)
 	// Releases the collection if it becomes empty.
 	if ([_views count] == 0)
 	{
+        // Exit all threads: render, parsing, and helper.
+        nglThreadExitAll();
+
 		nglRelease(_views);
+//        nglThreadExit(kNGLThreadRender);
 	}
 	
     [super dealloc];

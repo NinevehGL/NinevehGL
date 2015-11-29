@@ -110,7 +110,8 @@ static void nglRemoveTexturesFromCache(int *count, GLuint *values)
 		if (value == 0)
 		{
 			[_tCacheMMC removeObjectForKey:key];
-			values = realloc(values, sizeof(GLuint) * (newCount + 1));
+// AH FIXME: Problems with realloc and AddressSanitizer, so disabling reducing the texture cache size for now.
+//			values = realloc(values, sizeof(GLuint) * (newCount + 1));
 			values[newCount] = copy[i];
 			++newCount;
 		}

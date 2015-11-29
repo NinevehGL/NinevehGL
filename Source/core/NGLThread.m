@@ -173,15 +173,29 @@ static BOOL threadCheck(NSString *name)
 
 NGLThread *nglThreadGet(NSString *name)
 {
-	NGLThread *thread = [threads() objectForKey:name];
-	
-	// Just start new threads. Old threads will be reused.
-	if (thread == nil)
-	{
-		// The thread is retained internally by the class and will be released only when it exit.
-		thread = [[[NGLThread alloc] initWithName:name] autorelease];
-	}
-	
+    __block NGLThread *thread = nil;
+    
+    static dispatch_once_t onceToken;
+    static pthread_mutex_t mutex;
+    dispatch_once(&onceToken, ^{
+        pthread_mutex_init(&mutex, NULL);
+    });
+
+    // Serialize getting or making a thread.
+    pthread_mutex_lock(&mutex);
+    
+    thread = [threads() objectForKey:name];
+    
+    // Just start new threads. Old threads will be reused.
+    if (thread == nil)
+    {
+        // The thread is retained internally by the class and will be released only when it exit.
+        thread = [[[NGLThread alloc] initWithName:name] autorelease];
+    }
+    
+    pthread_mutex_unlock(&mutex);
+
+    
 	return thread;
 }
 
@@ -198,6 +212,7 @@ void nglThreadPerformSync(NSString *name, SEL selector, id target)
 	// Creates the thread once, if necessary.
 	NGLThread *thread = nglThreadGet(name);
 	
+    NSLog(@"%@ performSync: %@", name, NSStringFromSelector(selector));
 	[thread performSync:selector target:target];
 }
 
@@ -275,7 +290,10 @@ void nglThreadExitAll(void)
 		_paused = NO;
 		
 		// Only the render thread is a long-lived one.
-		_autoExit = (![name isEqualToString:kNGLThreadRender]);
+		_autoExit = (!([name isEqualToString:kNGLThreadRender]||[name isEqualToString:kNGLThreadHelper]));
+        if( [name isEqualToString:@"NinevehGLHelper"] ) {
+            NSLog(@"Helper alloc..");
+        }
 		
 		// The threads are internally retained to make future changes on it.
 		[threads() setObject:self forKey:_name];
@@ -329,18 +347,33 @@ void nglThreadExitAll(void)
 		}
 		
 		// Processes the Objc-C messages and frees the previous allocated memory for the message.
-		// First-in First-out rule. The first item will be detached, so the iterator "doesn't move".
-		nglFor(task, _queue)
-		{
-			// Executes the Obj-C message as fast as possible.
-			[task execute];
-			
-			// Removes the first task.
-			[_queue removeFirst];
-			
-			// Defines one task done.
-			oneTaskDone = YES;
-		}
+		// First-in First-out rule.
+        while (_queue.count) {
+            // Grab the task off the queue, minimizing thread contention.
+            task = [_queue pointerAtIndex:0];
+
+            // Executes the Obj-C message as fast as possible.
+            [task execute];
+            
+            // Then remove and release task.
+            [_queue removeFirst];
+
+            // Defines one task done.
+            oneTaskDone = YES;
+        }
+
+// First-in First-out rule. The first item will be detached, so the iterator "doesn't move".
+//		nglFor(task, _queue)
+//		{
+//			// Executes the Obj-C message as fast as possible.
+//			[task execute];
+//			
+//			// Removes the first task.
+//			[_queue removeFirst];
+//			
+//			// Defines one task done.
+//			oneTaskDone = YES;
+//		}
 		
 		// Draining the pool.
 		nglRelease(pool);
@@ -457,7 +490,11 @@ void nglThreadExitAll(void)
 - (void) dealloc
 {
 	// Doesn't need to exit the NGLThread because the dealloc can't be called while the thread is alive.
-	
+    NSLog(@"Dealloc thread: %@", _name);
+    if( [_name isEqualToString:@"NinevehGLHelper"] ) {
+        NSLog(@"Helper dealloc!!");
+    }
+    
 	nglRelease(_name);
 	nglRelease(_queue);
 	nglRelease(_thread);

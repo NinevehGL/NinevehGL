@@ -83,10 +83,10 @@ typedef struct
 {
 	BOOL isDynamic;
 	NGL_ARC_ASSIGN NSString *name;
-	unsigned int location;
+	UInt32 location;
 	unsigned char count; // 128 max Uniform in VSH
 	unsigned char dataType; // 3 data types: float, bool and int
-	unsigned int stride;
+	UInt32 stride;
 	void *data;
 	void *glFunction;
 } NGLSLVariable;
@@ -202,8 +202,8 @@ typedef struct
 /*!
  *					Returns the number of instances in this library at the moment.
  *
- *	@result			An unsigned int data type.
+ *	@result			An UInt32 data type.
  */
-- (unsigned int) count;
+- (UInt32) count;
 
 @end

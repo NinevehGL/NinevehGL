@@ -74,25 +74,25 @@
 @interface NGLSurface : NSObject <NGLSurface>
 {
 @private
-	unsigned int			_identifier;
-	unsigned int			_startData;
-	unsigned int			_lengthData;
+	UInt32			_identifier;
+	UInt32			_startData;
+	UInt32			_lengthData;
 }
 
 /*!
  *					The identifier of this object.
  */
-@property (nonatomic) unsigned int identifier;
+@property (nonatomic) UInt32 identifier;
 
 /*!
  *					Represents the starting index inside of this surface on the mesh's array of indices.
  */
-@property (nonatomic) unsigned int startData;
+@property (nonatomic) UInt32 startData;
 
 /*!
  *					Represents the length, in elements, of this surface on the mesh's array of indices.
  */
-@property (nonatomic) unsigned int lengthData;
+@property (nonatomic) UInt32 lengthData;
 
 /*!
  *					Initiates a new instance with a start data, length data and an identifier.
@@ -108,7 +108,7 @@
  *
  *	@result			A new initialized instance.
  */
-- (id) initWithStart:(unsigned int)start length:(unsigned int)length identifier:(unsigned int)newId;
+- (id) initWithStart:(UInt32)start length:(UInt32)length identifier:(UInt32)newId;
 
 /*!
  *					Returns an autorelease instance of NGLSurface.
@@ -136,6 +136,6 @@
  *
  *	@result			A NGLSurface autoreleased instance.
  */
-+ (id) surfacetWithStart:(unsigned int)start length:(unsigned int)length identifier:(unsigned int)newId;
++ (id) surfacetWithStart:(UInt32)start length:(UInt32)length identifier:(UInt32)newId;
 
 @end

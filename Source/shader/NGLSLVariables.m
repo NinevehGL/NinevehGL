@@ -122,8 +122,8 @@
 
 - (NGLSLVariable *) variableWithName:(NSString *)name
 {
-	unsigned int i;
-	unsigned int length = _vCount;
+	UInt32 i;
+	UInt32 length = _vCount;
 	for (i = 0; i < length; i++)
 	{
 		if ([name isEqualToString:_variables[i].name])
@@ -140,8 +140,8 @@
 	NGLSLVariable variable;
 	NGLSLVariable *variables = _variables;
 	
-	unsigned int i;
-	unsigned int length = _vCount;
+	UInt32 i;
+	UInt32 length = _vCount;
 	for (i = 0; i < length; i++)
 	{
 		variable = _variables[i];
@@ -165,8 +165,8 @@
 {
 	NGLSLVariable variable;
 	
-	unsigned int i;
-	unsigned int length = _vCount;
+	UInt32 i;
+	UInt32 length = _vCount;
 	for (i = 0; i < length; i++)
 	{
 		variable = _variables[i];
@@ -180,7 +180,7 @@
 	nglFree(_variables);
 }
 
-- (unsigned int) count
+- (UInt32) count
 {
 	return _vCount;
 }

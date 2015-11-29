@@ -95,11 +95,11 @@
 {
 @protected
 	// Structure Components
-	unsigned int			_vCount;
-	unsigned int			_tCount;
-	unsigned int			_nCount;
-	unsigned int			_taCount;
-	unsigned int			_biCount;
+	UInt32                  _vCount;
+	UInt32                  _tCount;
+	UInt32                  _nCount;
+	UInt32                  _taCount;
+	UInt32                  _biCount;
 	float					*_vertices;
 	float					*_texcoords;
 	float					*_normals;
@@ -107,15 +107,15 @@
 	float					*_bitangents;
 	
 	// Faces
-	unsigned int			_facesCount;
-	unsigned int			_facesStride;
-	unsigned int			*_faces;
+	UInt32                  _facesCount;
+	UInt32                  _facesStride;
+	UInt32                  *_faces;
 	
 	// Data
-	unsigned int			_iCount;
-	unsigned int			_sCount;
-	unsigned int			_stride;
-	unsigned int			*_indices;
+	UInt32                  _iCount;
+	UInt32                  _sCount;
+	UInt32                  _stride;
+	UInt32                  *_indices;
 	float					*_structures;
 	
 	// Mesh Structure
@@ -161,24 +161,24 @@
 /*!
  *					The number of elements in the array of indices.
  */
-@property (nonatomic, readonly) unsigned int indicesCount;
+@property (nonatomic, readonly) UInt32 indicesCount;
 
 /*!
  *					The number of elements in the array of structures.
  */
-@property (nonatomic, readonly) unsigned int structuresCount;
+@property (nonatomic, readonly) UInt32 structuresCount;
 
 /*!
  *					The stride of elements in the array of structures. This stride is given in elements.
  *					However, OpenGL needs stride in basic machine units (bytes). So this number must be
  *					converted later on, before be sent to OpenGL's core.
  */
-@property (nonatomic, readonly) unsigned int stride;
+@property (nonatomic, readonly) UInt32 stride;
 
 /*!
- *					The array of indices. It's an unsigned int data type.
+ *					The array of indices. It's an UInt32 data type.
  */
-@property (nonatomic, readonly) unsigned int *indices;
+@property (nonatomic, readonly) UInt32 *indices;
 
 /*!
  *					The array of structures. It's composed by float data type because OpenGL

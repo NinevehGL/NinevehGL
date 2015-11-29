@@ -131,7 +131,7 @@
  *
  *	@see			NGLSurface
  */
-- (NGLSurface *) surfaceWithIdentifier:(unsigned int)identifier;
+- (NGLSurface *) surfaceWithIdentifier:(UInt32)identifier;
 
 /*!
  *					Returns a surface by its index.
@@ -150,14 +150,14 @@
  *
  *	@see			NGLSurface
  */
-- (NGLSurface *) surfaceAtIndex:(unsigned int)index;
+- (NGLSurface *) surfaceAtIndex:(UInt32)index;
 
 /*!
  *					Returns the number of instances in this library at the moment.
  *
- *	@result			An unsigned int data type.
+ *	@result			An UInt32 data type.
  */
-- (unsigned int) count;
+- (UInt32) count;
 
 /*!
  *					Returns an autorelease instance of NGLSurfaceMulti.

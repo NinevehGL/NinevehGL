@@ -82,7 +82,7 @@ NGL_API NGLvec4 nglColorFromRGBA(unsigned short r, unsigned short g, unsigned sh
  *
  *	@result			A NGLvec4 with the desired color.
  */
-NGL_API NGLvec4 nglColorFromHexadecimal(unsigned int hex);
+NGL_API NGLvec4 nglColorFromHexadecimal(UInt32 hex);
 
 /*!
  *					This function generates a color based on an CGColorRef, it must be in RGB color space.
@@ -122,7 +122,7 @@ NGL_API UIColor *nglColorToUIColor(NGLvec4 color);
  *
  *	@result			A color in hexadecimal notation for RGBA (0xNNNNNNNN).
  */
-NGL_API unsigned int nglColorToHexadecimal(NGLvec4 color);
+NGL_API UInt32 nglColorToHexadecimal(NGLvec4 color);
 
 /*!
  *					Checks if the color is not a black one.
@@ -158,7 +158,7 @@ NGL_API BOOL nglColorIsNotBlack(NGLvec4 color);
  *
  *	@result			A NGLvec4 representing the color for this telemetry ID.
  */
-NGL_API NGLvec4 nglTelemetryIDToColor(unsigned int telemetryID);
+NGL_API NGLvec4 nglTelemetryIDToColor(UInt32 telemetryID);
 
 /*!
  *					Converts a RGBA color into telemetry ID.
@@ -168,9 +168,9 @@ NGL_API NGLvec4 nglTelemetryIDToColor(unsigned int telemetryID);
  *	@param			rgba
  *					A NGLivec4 with the RGBA color.
  *
- *	@result			An unsigned int with the extracted telemetry ID.
+ *	@result			An UInt32 with the extracted telemetry ID.
  */
-NGL_API unsigned int nglTelemetryIDFromRGBA(NGLivec4 rgba);
+NGL_API UInt32 nglTelemetryIDFromRGBA(NGLivec4 rgba);
 
 /*!
  *					Converts a color (NGLvec4) into telemetry ID.
@@ -180,9 +180,9 @@ NGL_API unsigned int nglTelemetryIDFromRGBA(NGLivec4 rgba);
  *	@param			color
  *					A NGLvec4 with the color.
  *
- *	@result			An unsigned int with the extracted telemetry ID.
+ *	@result			An UInt32 with the extracted telemetry ID.
  */
-NGL_API unsigned int nglTelemetryIDFromColor(NGLvec4 color);
+NGL_API UInt32 nglTelemetryIDFromColor(NGLvec4 color);
 
 #pragma mark -
 #pragma mark Vec2 Functions

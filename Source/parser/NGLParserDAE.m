@@ -714,7 +714,7 @@ static void daeSetString(NSString **target, NSString *newString)
 
 - (void) defineFaceTo:(int)index
 {
-	unsigned int *faces;
+	UInt32 *faces;
 	NGLivec3 vGroup;
 	
 	_faces = realloc(_faces, NGL_SIZE_INT * (++_facesCount * _facesStride));

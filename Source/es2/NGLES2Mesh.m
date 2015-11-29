@@ -117,13 +117,13 @@
 	// TODO remove all this shit when iOS 6 comes out.
 	//*
 	void *indices;
-	unsigned int dataSize;
-	unsigned short *newData = NULL;
+	UInt32 dataSize;
+	UInt16 *newData = NULL;
 	
 	if (nglDeviceSystemVersion() < NGL_IOS_5_0)
 	{
-		unsigned int *data = _parent.indices;
-		unsigned int count = _parent.indicesCount;
+		UInt32 *data = _parent.indices;
+		UInt32 count = _parent.indicesCount;
 		
 		if (count > NGL_MAX_16)
 		{
@@ -136,11 +136,11 @@
 		
 		newData = malloc(count * NGL_SIZE_USHORT);
 		
-		unsigned int i;
-		unsigned int length = count;
+		UInt32 i;
+		UInt32 length = count;
 		for (i = 0; i < length; ++i)
 		{
-			newData[i] = (unsigned short)data[i];
+			newData[i] = (UInt16)data[i];
 		}
 		
 		indices = newData;
@@ -206,7 +206,7 @@
 	NGLSurfaceMulti *sufLib;
 	
 	NGLSurface *surface;
-	unsigned short sufId;
+	UInt16 sufId;
 	BOOL multiMtl = [_parent.material isKindOfClass:[NGLMaterialMulti class]];
 	BOOL multiShd = [_parent.shaders isKindOfClass:[NGLShadersMulti class]];
 	
@@ -284,7 +284,7 @@
 	[_buffers bind];
 	
 	NGLES2Polygon *polygon;
-	nglFor (polygon, _polygons)
+    nglFor (polygon, _polygons)
 	{
 		[polygon drawPolygon];
 	}
@@ -293,7 +293,7 @@
 	[_buffers unbind];
 }
 
-- (void) drawTelemetry:(unsigned int)telemetry
+- (void) drawTelemetry:(UInt32)telemetry
 {
 	NGLvec4 color = nglTelemetryIDToColor(telemetry);
 	

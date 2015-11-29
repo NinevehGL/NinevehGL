@@ -54,7 +54,7 @@ NGLvec4 nglColorFromRGBA(unsigned short r, unsigned short g, unsigned short b, u
 	return nglColorMake((float)r / 255.0f, (float)g / 255.0f, (float)b / 255.0f, (float)a / 255.0f);
 }
 
-NGLvec4 nglColorFromHexadecimal(unsigned int hex)
+NGLvec4 nglColorFromHexadecimal(UInt32 hex)
 {
 	return nglColorFromRGBA((hex >> 24) & 0xFF, (hex >> 16) & 0xFF, (hex >> 8) & 0xFF, (hex >> 0) & 0xFF);
 }
@@ -95,7 +95,7 @@ UIColor *nglColorToUIColor(NGLvec4 color)
 	return [UIColor colorWithRed:color.r green:color.g blue:color.b alpha:color.a];
 }
 
-unsigned int nglColorToHexadecimal(NGLvec4 color)
+UInt32 nglColorToHexadecimal(NGLvec4 color)
 {
 	NGLivec4 rgba = (NGLivec4){ color.r * 255.0f, color.g * 255.0f, color.b * 255.0f, color.a * 255.0f };
 	
@@ -113,17 +113,17 @@ BOOL nglColorIsNotBlack(NGLvec4 color)
 //	Telemetry Functions
 //**************************************************
 
-NGLvec4 nglTelemetryIDToColor(unsigned int telemetryID)
+NGLvec4 nglTelemetryIDToColor(UInt32 telemetryID)
 {
 	return (NGLvec4){ (telemetryID >> 8 & 0xFF) / 255.0f, (telemetryID & 0xFF) / 255.0f, 0.0f, 1.0f };
 }
 
-unsigned int nglTelemetryIDFromRGBA(NGLivec4 rgba)
+UInt32 nglTelemetryIDFromRGBA(NGLivec4 rgba)
 {
 	return (rgba.r << 8) + rgba.g;
 }
 
-unsigned int nglTelemetryIDFromColor(NGLvec4 color)
+UInt32 nglTelemetryIDFromColor(NGLvec4 color)
 {
 	return nglTelemetryIDFromRGBA((NGLivec4){ color.r * 255.0f, color.g * 255.0f, color.b, color.a });
 }
