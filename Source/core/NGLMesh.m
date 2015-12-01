@@ -659,11 +659,12 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 	// Performs the a method if the delegate target responds to the method.
 	if ((_inspector & check))
 	{
+        // AH: Really need a language upgrade to use ARC and weak references
+        // to deal with potentially deallocated threads on async main dispatch.
         __weak NGLMesh *weakSelf = self;
 		dispatch_async(dispatch_get_main_queue(), ^(void)
 		{
             NGLMesh *safeSelf = weakSelf;
-//            [safeSelf.delegate performSelector:selector withObject:safeSelf.parsing];
             if( safeSelf ){
                 ((id (*)(id, SEL, NGLParsing))objc_msgSend)(safeSelf.delegate, selector, safeSelf.parsing);
             }

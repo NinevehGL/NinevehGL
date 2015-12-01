@@ -211,8 +211,9 @@ void nglThreadPerformSync(NSString *name, SEL selector, id target)
 {
 	// Creates the thread once, if necessary.
 	NGLThread *thread = nglThreadGet(name);
-	
-    NSLog(@"%@ performSync: %@", name, NSStringFromSelector(selector));
+
+// AH: Watch the syncrhonous thread execution, debugging in case of thread deadlocking.
+//    NSLog(@"%@ performSync: %@", name, NSStringFromSelector(selector));
 	[thread performSync:selector target:target];
 }
 
@@ -291,9 +292,6 @@ void nglThreadExitAll(void)
 		
 		// Only the render thread is a long-lived one.
 		_autoExit = (!([name isEqualToString:kNGLThreadRender]||[name isEqualToString:kNGLThreadHelper]));
-        if( [name isEqualToString:@"NinevehGLHelper"] ) {
-            NSLog(@"Helper alloc..");
-        }
 		
 		// The threads are internally retained to make future changes on it.
 		[threads() setObject:self forKey:_name];
@@ -361,19 +359,6 @@ void nglThreadExitAll(void)
             // Defines one task done.
             oneTaskDone = YES;
         }
-
-// First-in First-out rule. The first item will be detached, so the iterator "doesn't move".
-//		nglFor(task, _queue)
-//		{
-//			// Executes the Obj-C message as fast as possible.
-//			[task execute];
-//			
-//			// Removes the first task.
-//			[_queue removeFirst];
-//			
-//			// Defines one task done.
-//			oneTaskDone = YES;
-//		}
 		
 		// Draining the pool.
 		nglRelease(pool);
@@ -489,12 +474,6 @@ void nglThreadExitAll(void)
 
 - (void) dealloc
 {
-	// Doesn't need to exit the NGLThread because the dealloc can't be called while the thread is alive.
-    NSLog(@"Dealloc thread: %@", _name);
-    if( [_name isEqualToString:@"NinevehGLHelper"] ) {
-        NSLog(@"Helper dealloc!!");
-    }
-    
 	nglRelease(_name);
 	nglRelease(_queue);
 	nglRelease(_thread);

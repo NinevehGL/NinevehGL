@@ -73,7 +73,7 @@ static void nglArrayLock(NGLArrayValues *array )
     if( errvalue != 0)  {
         // EBUSY  = 16
         // EINVAL = 24
-        NSLog(@"NGLArray Lock Contention");
+//        NSLog(@"NGLArray Lock Contention");
         pthread_mutex_lock(&array->mutex);
     }
     
@@ -754,13 +754,18 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 }
 
 - (BOOL) forCheck {
-    BOOL result = self->_values.i < self->_values.count;
-    if( !result ) {
-        [self unlock]; // last check, unlock.
+    if( self->_values.i < self->_values.count ){
+        
+        return YES;
     }
-    return result;
+    else {
+        [self unlock]; // last check, unlock.
+        [self resetIterator];
+        return NO;
+    }
 }
 
+// AH: Results from nextIterator feed into the next -forCheck, so we have to leave _values.i++ incremented.
 - (void *) nextIterator
 {
 	// Loops iterator until it reach the variables count.
@@ -782,15 +787,6 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 	}
 }
 
-- (void *) endLoop
-{
-    if( _values.count > 0 ) {
-        [self unlock]; // AH: SKETCHY!!
-    }
-    
-    return NULL;
-}
-
 - (void) resetIterator
 {
 	_values.i = 0;
@@ -801,7 +797,6 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 								   objects:(NGL_ARC_ASSIGN id *)stackbuf
 									 count:(NSUInteger)len
 {
-	//*
     if ((*state).state >= _values.count)
     {
         return 0;
@@ -810,29 +805,9 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 	// Runs once. Points mutationPtr to self to avoid error when array changes while looping.
 	(*state).itemsPtr = (id *)_values.pointers;
 	(*state).state = _values.count;
-	(*state).mutationsPtr = (unsigned long *)&_values.count;//self;
+	(*state).mutationsPtr = (unsigned long *)&_values.count;
 	
     return _values.count;
-	/*/
-	// First loop.
-	if ((*state).state == 0)		
-	{
-		[self resetIterator];
-	}
-	// Last loop.
-	else if ((*state).state >= _values.count)
-	{
-		[self resetIterator];
-		return 0;
-	}
-	
-	// Runs once.
-	(*state).itemsPtr = (id *)_values.iterator++;
-	(*state).state = ++_values.i;
-	(*state).mutationsPtr = (unsigned long *)self;
-	
-	return 1;
-	//*/
 }
 
 #pragma mark -

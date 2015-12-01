@@ -87,7 +87,6 @@ typedef struct
  */
 #define nglFor(p, a)\
 for([a forLoop:(void **)&(p)]; [a forCheck]; p = [a nextIterator])
-//(*v).i++, (p) = ((*v).i+1 < (*v).count) ? *(*v).iterator++ : [(((a) != nil) ? (a) : [NGLArray array]) endLoop] )
 
 /*!
  *					Checks if a pointer is valid or not, that means, if a pointer is really pointing to
@@ -425,6 +424,7 @@ NGL_API BOOL nglPointerIsValidToSelector(void *pointer, SEL selector);
 /*!
  *					<strong>(Internal only)</strong> Prepares this array to work with "nglFor" loop.
  *					You should not call this method directly.
+ *                  Locks the array mutex.
  *
  *	@param			target
  *					A pointer to the target that will receive the items of this array. Inside this
@@ -438,6 +438,7 @@ NGL_API BOOL nglPointerIsValidToSelector(void *pointer, SEL selector);
  *					<strong>(Internal only)</strong> Checks the "nglFor" loop for additional iterations,
  *                  otherwise terminates and unlocks the iterator.
  *					You should not call this method directly.
+ *                  Last iteration unlocks the array mutex.
  *
  *	@result			Returns YES if next iteration possible.
  */
@@ -450,14 +451,6 @@ NGL_API BOOL nglPointerIsValidToSelector(void *pointer, SEL selector);
  *	@result			Returns next object or NULL if past last object.
  */
 - (void *) nextIterator;
-
-/*!
- *					<strong>(Internal only)</strong> Finishes the last "nglFor" loop iteration of this array.
- *					You should not call this method directly.
- *
- *	@result			Always return NULL
- */
-- (void *) endLoop;
 
 /*!
  *					Returns an autoreleased instance of NGLArray.
