@@ -69,28 +69,35 @@ static Class *classesList = NULL;
 
 static void nglArrayLock(NGLArrayValues *array )
 {
+// AH: Thread contention debugging.
+#ifndef NGLARRAY_THREAD_CONTENTION_DEBUG
+
+    pthread_mutex_lock(&array->mutex);
+
+#else // NGLARRAY_THREAD_CONTENTION_DEBUG
     int errvalue = pthread_mutex_trylock(&array->mutex);
     if( errvalue != 0)  {
         // EBUSY  = 16
         // EINVAL = 24
-//        NSLog(@"NGLArray Lock Contention");
+        NSLog(@"NGLArray Lock Contention");
         pthread_mutex_lock(&array->mutex);
     }
-    
+
     array->mutex_lock_count++;
     if( array->callstack ) {
         [array->callstack release];
     }
     array->callstack = [[NSThread callStackSymbols] retain];
     array->callthread = [NSThread currentThread].name;
+#endif
 }
 
 static void nglArrayUnlock(NGLArrayValues *array )
 {
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
     if( array->mutex_lock_count == 0 ) {
         NSLog(@"Too many unlocks");
     }
-    
     array->mutex_lock_count--;
     
     // Last unlock releases the callstack.
@@ -102,6 +109,7 @@ static void nglArrayUnlock(NGLArrayValues *array )
         
         array->callthread = nil;
     }
+#endif
 
     pthread_mutex_unlock(&array->mutex);
 }

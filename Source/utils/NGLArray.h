@@ -26,6 +26,12 @@
 
 #import <pthread.h>
 
+// AH: Thread contention debugging is an incredibly tricky task,
+//  this #define adds some mutex lock counting and callstack recording
+//  functionality to help with diagnosing where another thread had the lock first.
+
+// #define  NGLARRAY_THREAD_CONTENTION_DEBUG
+
 /*!
  *					<strong>(Internal only)</strong> An object that holds the array values.
  *
@@ -56,9 +62,11 @@ typedef struct
 	void			**iterator;
 	unsigned int	i;
     pthread_mutex_t mutex; // AH: Adding thread safety to all NGLArray operations.
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
     unsigned int    mutex_lock_count;
     NSString        *callthread;
     NSArray<NSString*> *callstack;
+#endif
 } NGLArrayValues;
 
 /*!
