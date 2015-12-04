@@ -142,7 +142,7 @@
 #define NGL_SAMPLER_CUBE	0x11
 
 // Size of basic data types
-#define NGL_SIZE_POINTER	4
+#define NGL_SIZE_POINTER	sizeof(void*)
 #define NGL_SIZE_FLOAT		4
 #define NGL_SIZE_INT		4
 #define NGL_SIZE_UINT		4

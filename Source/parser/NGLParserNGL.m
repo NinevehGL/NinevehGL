@@ -80,22 +80,22 @@ typedef enum
 } NGLMapType;
 
 // NGLMesh structure.
-// 12 bytes: 3 unsigned int.
+// 12 bytes: 3 UInt32.
 typedef struct
 {
-	unsigned int	indicesCount;
-	unsigned int	structuresCount;
-	unsigned int	stride;
+	UInt32	indicesCount;
+	UInt32	structuresCount;
+	UInt32	stride;
 } NGLMeshBody;
 
 // NGLMeshElement structure.
-// 4 bytes: 4 unsigned char.
+// 4 bytes: 4 UInt8.
 typedef struct
 {
-	unsigned char		component;
-	unsigned char		start;
-	unsigned char		length;
-	unsigned char		offsetInFace;
+	UInt8		component;
+	UInt8		start;
+	UInt8		length;
+	UInt8		offsetInFace;
 } NGLElementBody;
 
 // NGLMaterial structure.
@@ -116,18 +116,18 @@ typedef struct
 // 4 bytes: 4 char.
 typedef struct
 {
-	unsigned char	type;
-	unsigned char	quality;
-	unsigned char	repeat;
-	unsigned char	optimize;
+	UInt8	type;
+	UInt8	quality;
+	UInt8	repeat;
+	UInt8	optimize;
 } NGLMapBody;
 
 // NGLSurface structure.
-// 8 bytes: 2 unsigned int.
+// 8 bytes: 2 UInt32.
 typedef struct
 {
-	unsigned int	startData;
-	unsigned int	lengthData;
+	UInt32	startData;
+	UInt32	lengthData;
 } NGLSurfaceBody;
 
 // Full path to the NinevehGL binary folder in the Library directory.
@@ -145,7 +145,7 @@ static NSString		*_nglPath;
 - (void) resetRange;
 
 // Increments and returns a new locator/pointer to work on the bit stream.
-- (NSRange) rangeUntil:(unsigned int)length;
+- (NSRange) rangeUntil:(UInt32)length;
 
 // Extracts the data from a NGL Binary file.
 - (void) extractDataFromFile:(NSString *)fullPath;
@@ -220,7 +220,7 @@ static NSString		*_nglPath;
 	_totalParsedData = 1;
 }
 
-- (NSRange) rangeUntil:(unsigned int)length
+- (NSRange) rangeUntil:(UInt32)length
 {
 	NSRange range = (NSRange){_rangeIndex,length};
 	_rangeIndex += length;
@@ -234,7 +234,7 @@ static NSString		*_nglPath;
 - (void) extractDataFromFile:(NSString *)fullPath
 {
 	NSData *data = nglDataFromFile(fullPath);
-	unsigned int i, j;
+	UInt32 i, j;
 	
 	// Resets the helpers.
 	[self resetRange];
@@ -265,7 +265,7 @@ static NSString		*_nglPath;
 	//*************************
 	
 	// Basic body properties.
-	unsigned int elementCount;
+	UInt32 elementCount;
 	NGLElementBody elementBody;
 	NGLElement element;
 	NGLMeshBody meshBody;
@@ -316,13 +316,13 @@ static NSString		*_nglPath;
 	char *name;
 	
 	// Materials.
-	unsigned int materialsCount;
-	unsigned int materialID;
+	UInt32 materialsCount;
+	UInt32 materialID;
 	NGLMaterial *material;
 	NGLMaterialBody materialBody;
 	
 	// Textures.
-	unsigned int  mapsCount;
+	UInt32  mapsCount;
 	unsigned short mapKind;
 	NGLTexture *map;
 	NGLMapBody mapBody;
@@ -435,8 +435,8 @@ static NSString		*_nglPath;
 	//*************************
 	
 	// Surfaces.
-	unsigned int surfacesCount;
-	unsigned int surfaceID;
+	UInt32 surfacesCount;
+	UInt32 surfaceID;
 	NGLSurface *surface;
 	NGLSurfaceBody surfaceBody;
 	
@@ -486,7 +486,7 @@ static NSString		*_nglPath;
 	//*************************
 	
 	// Basic body properties.
-	unsigned int elementCount;
+	UInt32 elementCount;
 	NGLElementBody elementBody;
 	NGLElement *element;
 	NGLMeshBody meshBody;
@@ -534,13 +534,13 @@ static NSString		*_nglPath;
 	char *name;
 	
 	// Materials.
-	unsigned int materialsCount;
-	unsigned int materialID;
+	UInt32 materialsCount;
+	UInt32 materialID;
 	NGLMaterial *material;
 	NGLMaterialBody materialBody;
 	
 	// Textures.
-	unsigned int mapsCount;
+	UInt32 mapsCount;
 	unsigned short mapKind;
 	NGLTexture *map;
 	NGLMapBody mapBody;
@@ -665,8 +665,8 @@ static NSString		*_nglPath;
 	NGLSurfaceMulti		*sufLib = parse.surface;
 	
 	// Surfaces.
-	unsigned int surfacesCount;
-	unsigned int surfaceID;
+	UInt32 surfacesCount;
+	UInt32 surfaceID;
 	NGLSurface *surface;
 	NGLSurfaceBody surfaceBody;
 	

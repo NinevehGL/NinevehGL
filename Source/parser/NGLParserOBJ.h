@@ -86,7 +86,7 @@
 {
 @private
 	// Helpers
-	unsigned int			_lines;
+	UInt32			_lines;
 	NSString				*_finalPath;
 	NSMutableDictionary		*_faceStore;
 	NSArray					*_cuted;
@@ -99,7 +99,7 @@
 	// Groups
 	NGLivec3				*_groups;
 	int						_gCount;
-	unsigned int			_currentGrp;
+	UInt32			_currentGrp;
 
 	// Materials
 	NGLParserMTL			*_mtlParser;

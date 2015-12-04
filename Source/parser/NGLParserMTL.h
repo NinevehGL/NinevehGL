@@ -54,7 +54,7 @@
 {
 @private
 	// Helpers
-	unsigned int			_lines;
+	UInt32			_lines;
 	NSString				*_finalPath;
 	NSMutableArray			*_files;
 	NSArray					*_cuted;

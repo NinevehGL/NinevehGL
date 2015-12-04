@@ -21,6 +21,7 @@
  */
 
 #import "NGLContext.h"
+#import <pthread.h>
 
 #pragma mark -
 #pragma mark Constants
@@ -47,6 +48,7 @@
 //**************************************************
 
 static EAGLSharegroup *_nglGroup = nil;
+static pthread_mutex_t _nglContextMutex;
 
 #pragma mark -
 #pragma mark Public Interface
@@ -59,13 +61,19 @@ static EAGLSharegroup *_nglGroup = nil;
 
 EAGLContext *nglContextEAGL(void)
 {
+    // Thread Safety: Protect the critical section of establishing the shared group.
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        pthread_mutex_init(&_nglContextMutex, NULL );
+    });
+    
 	EAGLContext *contextEAGL = [EAGLContext currentContext];
-	
 	if (contextEAGL == nil)
 	{
-		EAGLRenderingAPI api;
+        pthread_mutex_lock(&_nglContextMutex);
 		
 		// Choose the correct API.
+        EAGLRenderingAPI api;
 		switch (nglDefaultEngine)
 		{
 			case NGLEngineVersionES2:
@@ -81,6 +89,8 @@ EAGLContext *nglContextEAGL(void)
 		
 		// Commit changes and set the new EAGLContext.
 		[EAGLContext setCurrentContext:contextEAGL];
+        
+        pthread_mutex_unlock(&_nglContextMutex);
 	}
 	
 	return contextEAGL;

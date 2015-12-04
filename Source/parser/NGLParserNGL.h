@@ -73,21 +73,21 @@
  *
  *					|--- 4 bytes (float)            NGL Binary file version
  *					|
- *					|--- 4 bytes (unsigned int)     Count - Elements Node
+ *					|--- 4 bytes (UInt32)     Count - Elements Node
  *					|   |
  *					|   |--- 1 byte (unsigned char)     component
  *					|   |--- 1 byte (unsigned char)     start
  *					|   |--- 1 byte (unsigned char)     length
  *					|   |--- 1 byte (unsigned char)     offsetInFace
  *					|
- *					|--- 4 bytes (unsigned int)     Count - Indices
- *					|--- 4 bytes (unsigned int)     Count - Structures
- *					|--- 4 bytes (unsigned int)     Stride
+ *					|--- 4 bytes (UInt32)     Count - Indices
+ *					|--- 4 bytes (UInt32)     Count - Structures
+ *					|--- 4 bytes (UInt32)     Stride
  *					|
  *					|--- x bytes (unsigned short)   Indices array
  *					|--- x bytes (float)            Structure array
  *					|
- *					|--- 4 bytes (unsigned int)     Count - Materials Node
+ *					|--- 4 bytes (UInt32)     Count - Materials Node
  *					|   |
  *					|   |--- 2 bytes (unsigned short)   Identifier
  *					|   |--- 2 bytes (unsigned short)   Name length
@@ -103,7 +103,7 @@
  *					|   |--- 4 bytes (float)            Shininess
  *					|   |--- 4 bytes (float)            Refraction
  *					|   |
- *					|   |--- 4 bytes (unsigned int)     Count - Texture Node
+ *					|   |--- 4 bytes (UInt32)     Count - Texture Node
  *					|           |
  *					|           |--- 2 bytes (unsigned short)   Map kind (alpha, ambient, diffuse, ...)
  *					|           |--- 2 bytes (unsigned short)   Name length
@@ -114,12 +114,12 @@
  *					|           |--- 1 byte (unsigned char)     Repeat
  *					|           |--- 1 byte (unsigned char)     Optimize
  *					|
- *					|--- 4 bytes (unsigned int)     Count - Surface Node
+ *					|--- 4 bytes (UInt32)     Count - Surface Node
  *					    |
  *					    |--- 2 bytes (unsigned short)   Identifier
  *					    |          
- *					    |--- 4 bytes (unsigned int)     Start data
- *					    |--- 4 bytes (unsigned int)     Length data
+ *					    |--- 4 bytes (UInt32)     Start data
+ *					    |--- 4 bytes (UInt32)     Length data
  *
  *					</pre>
  *	
@@ -130,7 +130,7 @@
 {
 @private
 	// Helpers
-	unsigned int			_rangeIndex;
+	UInt32			_rangeIndex;
 }
 
 /*!

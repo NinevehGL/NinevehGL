@@ -175,13 +175,13 @@
  *					Gets the current OpenGL framebuffer for this NGLView. It's useful to work with third
  *					party libraries that ask you for the framebuffer reference.
  */
-@property (nonatomic, readonly) unsigned int framebuffer;
+@property (nonatomic, readonly) UInt32 framebuffer;
 
 /*!
  *					Gets the current OpenGL renderbuffer (color) for this NGLView. It's useful to work with
  *					third party libraries that ask you for the renderbuffer reference.
  */
-@property (nonatomic, readonly) unsigned int renderbuffer;
+@property (nonatomic, readonly) UInt32 renderbuffer;
 
 /*!
  *					A pointer to the background color. This color is a NinevehGL color (NGLvec4).

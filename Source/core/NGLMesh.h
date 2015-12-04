@@ -321,11 +321,11 @@ NGL_API NSString *const kNGLMeshOriginalYes;
 	NGLmat4					_mvIMatrix;
 	
 	// Structure
-	unsigned int			*_indices;
+	UInt32                  *_indices;
 	float					*_structures;
-	unsigned int			_iCount;
-	unsigned int			_sCount;
-	unsigned int			_stride;
+	UInt32                  _iCount;
+	UInt32                  _sCount;
+	UInt32                  _stride;
 	NGLMeshElements			*_meshElements;
 	
 	// Properties
@@ -345,10 +345,10 @@ NGL_API NSString *const kNGLMeshOriginalYes;
 	// Delegate
 	id <NGLMeshDelegate>	_delegate;
 	Class					_delegateClass;
-	unsigned int			_inspector;
+	UInt32                  _inspector;
 	
 	// Helpers
-	unsigned int			_slot;
+	UInt32                  _slot;
 	NGLParsing				_parsing;
 	BOOL					_isParsing;
 	BOOL					_isCompiling;
@@ -389,23 +389,23 @@ NGL_API NSString *const kNGLMeshOriginalYes;
 /*!
  *					The array of indices's length.
  */
-@property (nonatomic, readonly) unsigned int indicesCount;
+@property (nonatomic, readonly) UInt32 indicesCount;
 
 /*!
  *					The array of structures's length.
  */
-@property (nonatomic, readonly) unsigned int structuresCount;
+@property (nonatomic, readonly) UInt32 structuresCount;
 
 /*!
  *					The array of structures's stride in computer basic units (bits).
  */
-@property (nonatomic, readonly) unsigned int stride;
+@property (nonatomic, readonly) UInt32 stride;
 
 /*!
  *					Pointer to the array of indices containing the instructions to work with OpenGL
  *					programmable pipeline.
  */
-@property (nonatomic, readonly) unsigned int *indices;
+@property (nonatomic, readonly) UInt32 *indices;
 
 /*!
  *					Pointer to the array of structures containing all the information about this
@@ -556,8 +556,8 @@ NGL_API NSString *const kNGLMeshOriginalYes;
 - (void) loadFile:(NSString *)named settings:(NSDictionary *)dict type:(NGL3DFileType)type;
 
 //- (void) loadMeshManually:(NSString *)named;
-//- (void) insertData:(float *)data count:(unsigned int)count type:(NGLComponent)component;
-//- (void) insertFaces:(unsigned int *)faces count:(unsigned int)count;
+//- (void) insertData:(float *)data count:(UInt32)count type:(NGLComponent)component;
+//- (void) insertFaces:(UInt32 *)faces count:(UInt32)count;
 
 /*!
  *					Stops the loading process. Cancelling the process is not immediately, it can
@@ -592,7 +592,7 @@ NGL_API NSString *const kNGLMeshOriginalYes;
  */
 - (void) drawMeshWithCamera:(NGLCamera *)camera;
 
-- (void) drawMeshWithCamera:(NGLCamera *)camera usingTelemetry:(unsigned int)telemetry;
+- (void) drawMeshWithCamera:(NGLCamera *)camera usingTelemetry:(UInt32)telemetry;
 
 /*!
  *					Sets the array of indices.
@@ -607,7 +607,7 @@ NGL_API NSString *const kNGLMeshOriginalYes;
  *					The array of indice's length. As the array of indices is a C array, you need to specify
  *					its length.
  */
-- (void) setIndices:(unsigned int *)newIndices count:(unsigned int)newCount;
+- (void) setIndices:(UInt32 *)newIndices count:(UInt32)newCount;
 
 /*!
  *					Sets the array of structures.
@@ -626,7 +626,7 @@ NGL_API NSString *const kNGLMeshOriginalYes;
  *					The array of structures's stride. This stride must be in elements, not basic
  *					machine units.
  */
-- (void) setStructures:(float *)newStructures count:(unsigned int)newCount stride:(unsigned int)newStride;
+- (void) setStructures:(float *)newStructures count:(UInt32)newCount stride:(UInt32)newStride;
 
 /*!
  *					<strong>(Internal only)</strong> You should not call this one manually.

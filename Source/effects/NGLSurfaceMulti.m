@@ -229,7 +229,7 @@
 	[_collection removeAll];
 }
 
-- (NGLSurface *) surfaceWithIdentifier:(unsigned int)identifier
+- (NGLSurface *) surfaceWithIdentifier:(UInt32)identifier
 {
 	NGLSurface *item = nil;
 	
@@ -244,12 +244,12 @@
 	return item;
 }
 
-- (NGLSurface *) surfaceAtIndex:(unsigned int)index
+- (NGLSurface *) surfaceAtIndex:(UInt32)index
 {
 	return [_collection pointerAtIndex:index];
 }
 
-- (unsigned int) count
+- (UInt32) count
 {
 	return [_collection count];
 }
@@ -268,7 +268,7 @@
 								   objects:(NGL_ARC_ASSIGN id *)stackbuf
 									 count:(NSUInteger)len
 {
-	unsigned int count = [_collection count];
+	UInt32 count = [_collection count];
 	
     if ((*state).state >= count)
     {

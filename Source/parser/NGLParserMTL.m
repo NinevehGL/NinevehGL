@@ -67,7 +67,7 @@ static NSString *const REG_FILE_PATH = @"\\W*?\\w+? (.*)";
 //**************************************************
 
 // Global count to the materials created by this parse.
-static unsigned int _mtlCount;
+static UInt32 _mtlCount;
 
 #pragma mark -
 #pragma mark Private Category
@@ -155,7 +155,7 @@ static unsigned int _mtlCount;
 	}
 	else
 	{
-		_error.message = [NSString stringWithFormat:MTL_IMCOMPLETE_VALUES, _lines];
+		_error.message = [NSString stringWithFormat:MTL_IMCOMPLETE_VALUES, (unsigned int)_lines];
 	}
 	
 	return color;
@@ -233,10 +233,10 @@ static unsigned int _mtlCount;
 		_currentMaterial.alpha = 1;
 		
 		float alpha = 0.0f;
-		unsigned int n = 0;
+		UInt32 n = 0;
 		
-		unsigned int i;
-		unsigned int length = _cutedCount;
+		UInt32 i;
+		UInt32 length = _cutedCount;
 		
 		for (i = 1; i < length; i++)
 		{
@@ -405,7 +405,7 @@ static unsigned int _mtlCount;
 	// Checks if file exist.
 	if (source == nil)
 	{
-		_error.message = [NSString stringWithFormat:MTL_NOT_FOUND, _lines];
+		_error.message = [NSString stringWithFormat:MTL_NOT_FOUND, (unsigned int)_lines];
 	}
 	
 	// Prints error if exist.

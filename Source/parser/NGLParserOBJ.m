@@ -190,7 +190,7 @@ static NGLivec3 objFaceToVector(const char *cFace)
 
 - (void) processFace:(NSString *)face
 {
-	unsigned int *faces;
+	UInt32 *faces;
 	NGLivec3 vFace, vGroup;
 	
 	_faces = realloc(_faces, (++_facesCount * _facesStride) * NGL_SIZE_INT);
@@ -243,8 +243,8 @@ static NGLivec3 objFaceToVector(const char *cFace)
 	//*************************
 	if (strcmp(_prefix, "f") == 0)
 	{
-		unsigned int i;
-		unsigned int length = (_cutedCount > 4) ? _cutedCount : 4;
+		UInt32 i;
+		UInt32 length = (_cutedCount > 4) ? _cutedCount : 4;
 		for (i = 1; i < length; i++)
 		{
 			// If the current face forms a polygon which has more than 3 vertices,
@@ -268,7 +268,7 @@ static NGLivec3 objFaceToVector(const char *cFace)
 		// Checks for number of values.
 		if (_cutedCount <= 2)
 		{
-			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, _lines];
+			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, (unsigned int)_lines];
 			return;
 		}
 		
@@ -286,7 +286,7 @@ static NGLivec3 objFaceToVector(const char *cFace)
 		// Checks for number of values.
 		if (_cutedCount <= 3)
 		{
-			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, _lines];
+			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, (unsigned int)_lines];
 			return;
 		}
 		
@@ -306,7 +306,7 @@ static NGLivec3 objFaceToVector(const char *cFace)
 		// Checks for number of values.
 		if (_cutedCount <= 3)
 		{
-			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, _lines];
+			_error.message = [NSString stringWithFormat:OBJ_ERROR_IMCOMPLETE_VALUES, (unsigned int)_lines];
 			return;
 		}
 		
@@ -333,7 +333,7 @@ static NGLivec3 objFaceToVector(const char *cFace)
 		// Checks for multiple materials.
 		if (_cutedCount > 2)
 		{
-			_error.message = [NSString stringWithFormat:OBJ_ERROR_MULTIPLE_MTL, _lines];
+			_error.message = [NSString stringWithFormat:OBJ_ERROR_MULTIPLE_MTL, (unsigned int)_lines];
 		}
 		
 		// Mark the material to be used in a specific place into array of indices.
@@ -346,8 +346,8 @@ static NGLivec3 objFaceToVector(const char *cFace)
 	{
 		NSMutableString *fullName = [[NSMutableString alloc] init];
 		
-		unsigned int i;
-		unsigned int length = _cutedCount;
+		UInt32 i;
+		UInt32 length = _cutedCount;
 		for (i = 1; i < length; i++)
 		{
 			[fullName appendString:[_cuted objectAtIndex:i]];
@@ -433,13 +433,13 @@ static NGLivec3 objFaceToVector(const char *cFace)
 	//  Checks for faces count.
 	if (_facesCount == 0)
 	{
-		_error.message = [NSString stringWithFormat:OBJ_ERROR_NO_FACES, _lines];
+		_error.message = [NSString stringWithFormat:OBJ_ERROR_NO_FACES, (unsigned int)_lines];
 	}
 	
 	// Checks if the file exists.
 	if (source == nil)
 	{
-		_error.message = [NSString stringWithFormat:OBJ_ERROR_NO_FILE, _lines];
+		_error.message = [NSString stringWithFormat:OBJ_ERROR_NO_FILE, (unsigned int)_lines];
 	}
 	
 	// Defines the structure if no error was found, otherwise shows the error.

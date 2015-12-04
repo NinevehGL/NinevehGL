@@ -24,6 +24,14 @@
 #import "NGLError.h"
 #import "NGLIterator.h"
 
+#import <pthread.h>
+
+// AH: Thread contention debugging is an incredibly tricky task,
+//  this #define adds some mutex lock counting and callstack recording
+//  functionality to help with diagnosing where another thread had the lock first.
+
+// #define  NGLARRAY_THREAD_CONTENTION_DEBUG
+
 /*!
  *					<strong>(Internal only)</strong> An object that holds the array values.
  *
@@ -53,6 +61,12 @@ typedef struct
 	BOOL			retainOption;
 	void			**iterator;
 	unsigned int	i;
+    pthread_mutex_t mutex; // AH: Adding thread safety to all NGLArray operations.
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
+    unsigned int    mutex_lock_count;
+    NSString        *callthread;
+    NSArray<NSString*> *callstack;
+#endif
 } NGLArrayValues;
 
 /*!
@@ -80,9 +94,7 @@ typedef struct
  *					The NGLArray instance to loop through.
  */
 #define nglFor(p, a)\
-for(NGLArrayValues *v = [(((a) != nil) ? (a) : [NGLArray array]) forLoop:(void **)&(p)];\
-(*v).i < (*v).count;\
-(*v).i++, (p) = *(*v).iterator++)
+for([a forLoop:(void **)&(p)]; [a forCheck]; p = [a nextIterator])
 
 /*!
  *					Checks if a pointer is valid or not, that means, if a pointer is really pointing to
@@ -407,8 +419,20 @@ NGL_API BOOL nglPointerIsValidToSelector(void *pointer, SEL selector);
 - (unsigned int) count;
 
 /*!
+ *                  Lock a critical section so array manipulations on other threads are synchronized.
+ */
+- (void) lock;
+
+/*!
+ *                  Unlock a critical section
+ */
+- (void) unlock;
+ 
+
+/*!
  *					<strong>(Internal only)</strong> Prepares this array to work with "nglFor" loop.
  *					You should not call this method directly.
+ *                  Locks the array mutex.
  *
  *	@param			target
  *					A pointer to the target that will receive the items of this array. Inside this
@@ -417,6 +441,24 @@ NGL_API BOOL nglPointerIsValidToSelector(void *pointer, SEL selector);
  *	@result			A pointer to the values of this array.
  */
 - (NGLArrayValues *) forLoop:(void **)target;
+
+/*!
+ *					<strong>(Internal only)</strong> Checks the "nglFor" loop for additional iterations,
+ *                  otherwise terminates and unlocks the iterator.
+ *					You should not call this method directly.
+ *                  Last iteration unlocks the array mutex.
+ *
+ *	@result			Returns YES if next iteration possible.
+ */
+- (BOOL) forCheck;
+
+/*!
+ *					<strong>(Internal only)</strong> Iterates the "nglFor" loop.
+ *					You should not call this method directly.
+ *
+ *	@result			Returns next object or NULL if past last object.
+ */
+- (void *) nextIterator;
 
 /*!
  *					Returns an autoreleased instance of NGLArray.

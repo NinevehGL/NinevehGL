@@ -91,6 +91,14 @@ static GLuint _currentProgram;
 //	Constructors
 //**************************************************
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _name = 0;
+    }
+    return self;
+}
 
 #pragma mark -
 #pragma mark Private Methods

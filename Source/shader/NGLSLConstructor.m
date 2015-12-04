@@ -933,7 +933,7 @@ void nglConstructShaders(NGLShaders *shaders, NGLMaterial *material, NGLMesh *me
 		variable = ATT_TANGENT;
 		variable.stride = stride;
 		variable.count = (*element).length;
-		variable.data = (void *)(unsigned long)((*element).start * NGL_SIZE_FLOAT);
+		variable.data = (void *)(UInt64)((*element).start * NGL_SIZE_FLOAT);
 		[shaders.variables addVariable:variable];
 		
 		element = [elements elementWithComponent:NGLComponentBitangent];
@@ -941,7 +941,7 @@ void nglConstructShaders(NGLShaders *shaders, NGLMaterial *material, NGLMesh *me
 		variable = ATT_BITANGENT;
 		variable.stride = stride;
 		variable.count = (*element).length;
-		variable.data = (void *)(unsigned long)((*element).start * NGL_SIZE_FLOAT);
+		variable.data = (void *)(UInt64)((*element).start * NGL_SIZE_FLOAT);
 		[shaders.variables addVariable:variable];
 		
 		addShaderElement(VSH_TANGENT, shaders.vertex);
@@ -1006,7 +1006,7 @@ void nglConstructShaders(NGLShaders *shaders, NGLMaterial *material, NGLMesh *me
 		variable = ATT_NORMAL;
 		variable.stride = stride;
 		variable.count = (*element).length;
-		variable.data = (void *)(unsigned long)((*element).start * NGL_SIZE_FLOAT);
+		variable.data = (void *)(UInt64)((*element).start * NGL_SIZE_FLOAT);
 		[shaders.variables addVariable:variable];
 		
 		addShaderElement(VSH_NORMAL, shaders.vertex);
@@ -1028,7 +1028,7 @@ void nglConstructShaders(NGLShaders *shaders, NGLMaterial *material, NGLMesh *me
 		variable = ATT_MAP;
 		variable.stride = stride;
 		variable.count = (*element).length;
-		variable.data = (void *)(unsigned long)((*element).start * NGL_SIZE_FLOAT);
+		variable.data = (void *)(UInt64)((*element).start * NGL_SIZE_FLOAT);
 		[shaders.variables addVariable:variable];
 		
 		addShaderElement(VSH_MAP, shaders.vertex);
@@ -1049,7 +1049,7 @@ void nglConstructShaders(NGLShaders *shaders, NGLMaterial *material, NGLMesh *me
 	variable = ATT_VERTEX;
 	variable.stride = stride;
 	variable.count = (*element).length;
-	variable.data = (void *)(unsigned long)((*element).start * NGL_SIZE_FLOAT);
+	variable.data = (void *)(UInt64)((*element).start * NGL_SIZE_FLOAT);
 	[shaders.variables addVariable:variable];
 	
 	// The base FSH and VSH will always exist.

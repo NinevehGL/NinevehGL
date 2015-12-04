@@ -83,7 +83,7 @@ NSString *const kNGLMeshOriginalYes = @"useOriginalYes";
 //**************************************************
 
 // Global thread slots to the loading.
-static unsigned int *_slots = NULL;
+static UInt32 *_slots = NULL;
 
 // Global pointer library to the meshes.
 static NGLArray *_meshes;
@@ -128,10 +128,10 @@ static NGL3DFileType fileTypeForFile(NSString *fileNamed)
 }
 
 // Choose the best thread slot at this time. The best thread will be the one with less pending job.
-static unsigned int parseSlot(void)
+static UInt32 parseSlot(void)
 {
 	int i;
-	unsigned int min, index;
+	UInt32 min, index;
 	
 	// Initialize the slots once, setting all items to 0.
 	if (_slots == NULL)
@@ -156,7 +156,7 @@ static unsigned int parseSlot(void)
 }
 
 // Frees one number in a specific slot.
-static void parseFreeSlot(unsigned int slot)
+static void parseFreeSlot(UInt32 slot)
 {
 	--slot;
 	
@@ -424,7 +424,7 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 
 - (void) defineBoundingBox
 {
-	unsigned int i, n;
+	UInt32 i, n;
 	float vx, vy, vz;
 	NGLvec3 vMin, vMax;
 	unsigned char vertexStart = (*[_meshElements elementWithComponent:NGLComponentVertex]).start;
@@ -581,7 +581,7 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 - (void) parserNotification:(NGLMeshInspector)action
 {
 	SEL selector;
-	unsigned int check = NGLMeshNone;
+	UInt32 check = NGLMeshNone;
 	
 	// Avoids unecessary processes.
 	if (_inspector == NGLMeshNone)
@@ -659,17 +659,15 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 	// Performs the a method if the delegate target responds to the method.
 	if ((_inspector & check))
 	{
+        // AH: Really need a language upgrade to use ARC and weak references
+        // to deal with potentially deallocated threads on async main dispatch.
+        __weak NGLMesh *weakSelf = self;
 		dispatch_async(dispatch_get_main_queue(), ^(void)
 		{
-			// Avoids invalid or released delegate.
-			if (nglPointerIsValidToClass(_delegate, _delegateClass))
-			{
-				((id (*)(id, SEL, NGLParsing))objc_msgSend)(_delegate, selector, _parsing);
-			}
-			else
-			{
-				_inspector = NGLMeshNone;
-			}
+            NGLMesh *safeSelf = weakSelf;
+            if( safeSelf ){
+                ((id (*)(id, SEL, NGLParsing))objc_msgSend)(safeSelf.delegate, selector, safeSelf.parsing);
+            }
 		});
 	}
 }
@@ -843,7 +841,7 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 		_slot = parseSlot();
 		
 		// Starts or queue this load in the selected parser tread. The Parser Thread is a short-lived one.
-		NSString *threadName = [NSString stringWithFormat:@"%@-%i", kNGLThreadParser, _slot];
+		NSString *threadName = [NSString stringWithFormat:@"%@-%i", kNGLThreadParser, (unsigned int)_slot];
 		nglThreadPerformAsync(threadName, @selector(loadFile), self);
 	}
 }
@@ -918,7 +916,7 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 	}
 }
 
-- (void) drawMeshWithCamera:(NGLCamera *)camera usingTelemetry:(unsigned int)telemetry
+- (void) drawMeshWithCamera:(NGLCamera *)camera usingTelemetry:(UInt32)telemetry
 {
 	// Avoids to render a mesh while the upload is not ready yet.
 	if (_coreMesh.isReady)
@@ -933,18 +931,20 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 	}
 }
 
-- (void) setIndices:(unsigned int *)newIndices count:(unsigned int)newCount
+- (void) setIndices:(UInt32 *)newIndices count:(UInt32)newCount
 {
 	// Copies the memory of array of indices.
 	_indices = realloc(_indices, newCount * NGL_SIZE_UINT);
+    NSAssert(_indices != NULL, @"Invalid Indices reallocation");
 	memcpy(_indices, newIndices, newCount * NGL_SIZE_UINT);
 	_iCount = newCount;
 }
 
-- (void) setStructures:(float *)newStructures count:(unsigned int)newCount stride:(unsigned int)newStride
+- (void) setStructures:(float *)newStructures count:(UInt32)newCount stride:(UInt32)newStride
 {
 	// Copies the memory of array of structures.
 	_structures = realloc(_structures, newCount * NGL_SIZE_FLOAT);
+    NSAssert(_structures != NULL, @"Invalid Structures reallocation");
 	memcpy(_structures, newStructures, newCount * NGL_SIZE_FLOAT);
 	_sCount = newCount;
 	_stride = newStride;
@@ -1026,7 +1026,7 @@ static void emptyCoreMesh(id <NGLCoreMesh> coreMesh)
 	else
 	{
 		// Starts or queue this load in the selected parser tread.
-		NSString *name = [NSString stringWithFormat:@"%@-%i", kNGLThreadParser, _slot];
+		NSString *name = [NSString stringWithFormat:@"%@-%i", kNGLThreadParser, (unsigned int)_slot];
 		nglThreadPerformAsync(name, @selector(invoke), invocation);
 	}
 }

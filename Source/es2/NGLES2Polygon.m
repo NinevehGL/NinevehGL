@@ -197,7 +197,7 @@ static void setDynamicVariables(NGLSLVariables *variables, BOOL activate)
 	//*/
 	
 	// Adjusts the surface.
-	_start = (void *)(unsigned long)(surface.startData * _dataTypeSize);
+	_start = (void *)(UInt64)(surface.startData * _dataTypeSize); // FIXME: What is going on with this address calculation??
 	_length = surface.lengthData;
 	
 	// Sets the default material.
@@ -294,7 +294,7 @@ static void setDynamicVariables(NGLSLVariables *variables, BOOL activate)
 					[_textures addTexture:(NGLTexture *)(*variable).data];
 					
 					// Replaces the NGLTexture reference by the final texture unit to this texture object.
-					(*variable).data = (void *)(unsigned long)[_textures getLastUnit];
+					(*variable).data = (void *)(UInt64)[_textures getLastUnit];
 					break;
 			}
 		}

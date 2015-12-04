@@ -67,6 +67,53 @@ static Class *classesList = NULL;
 //	Private Functions
 //**************************************************
 
+static void nglArrayLock(NGLArrayValues *array )
+{
+// AH: Thread contention debugging.
+#ifndef NGLARRAY_THREAD_CONTENTION_DEBUG
+
+    pthread_mutex_lock(&array->mutex);
+
+#else // NGLARRAY_THREAD_CONTENTION_DEBUG
+    int errvalue = pthread_mutex_trylock(&array->mutex);
+    if( errvalue != 0)  {
+        // EBUSY  = 16
+        // EINVAL = 24
+        NSLog(@"NGLArray Lock Contention");
+        pthread_mutex_lock(&array->mutex);
+    }
+
+    array->mutex_lock_count++;
+    if( array->callstack ) {
+        [array->callstack release];
+    }
+    array->callstack = [[NSThread callStackSymbols] retain];
+    array->callthread = [NSThread currentThread].name;
+#endif
+}
+
+static void nglArrayUnlock(NGLArrayValues *array )
+{
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
+    if( array->mutex_lock_count == 0 ) {
+        NSLog(@"Too many unlocks");
+    }
+    array->mutex_lock_count--;
+    
+    // Last unlock releases the callstack.
+    if (array->mutex_lock_count == 0 ) {
+        if( array->callstack ) {
+            [array->callstack release];
+            array->callstack = nil;
+        }
+        
+        array->callthread = nil;
+    }
+#endif
+
+    pthread_mutex_unlock(&array->mutex);
+}
+
 static void nglArrayResize(NGLArrayValues *array)
 {
 	/*
@@ -79,49 +126,61 @@ static void nglArrayResize(NGLArrayValues *array)
 	 *pointers = realloc(*pointers, NGL_SIZE_POINTER * *capacity);
 	 *iterator = *pointers + *i;
 	 /*/
+    nglArrayLock(array);
+    
 	(*array).capacity += kNGL_STRIDE_HINT;
 	(*array).pointers = realloc((*array).pointers, NGL_SIZE_POINTER * (*array).capacity);
 	(*array).iterator = (*array).pointers + (*array).i;
+
+    if( (*array).pointers == NULL ) {
+        NSLog( @"Error resizing array in glArrayResize(): %d = %s", errno, strerror(errno));
+    }
+
+    nglArrayUnlock(array);
 	//*/
 }
 
 static void nglArrayAddPointer(NGLArrayValues *array, void *pointer)
 {
-	if (pointer != NULL)
-	{
-		/*
-		 unsigned int *capacity = &(*array).capacity;
-		 unsigned int *count = &(*array).count;
-		 void ***pointers = &(*array).pointers;
-		 BOOL *retain = &(*array).retainOption;
-		 
-		 if (*count >= *capacity)
-		 {
-		 nglArrayResize(array);
-		 }
-		 
-		 if (*retain)
-		 {
-		 [(id)pointer retain];
-		 }
-		 
-		 (*pointers)[*count] = pointer;
-		 ++*count;
-		 /*/
-		if ((*array).count >= (*array).capacity)
-		{
-			nglArrayResize(array);
-		}
-		
-		if ((*array).retainOption)
-		{
-			[(id)pointer retain];
-		}
-		
-		(*array).pointers[(*array).count] = pointer;
-		++(*array).count;
-		//*/
-	}
+    if (pointer != NULL)
+    {
+        /*
+         unsigned int *capacity = &(*array).capacity;
+         unsigned int *count = &(*array).count;
+         void ***pointers = &(*array).pointers;
+         BOOL *retain = &(*array).retainOption;
+         
+         if (*count >= *capacity)
+         {
+         nglArrayResize(array);
+         }
+         
+         if (*retain)
+         {
+         [(id)pointer retain];
+         }
+         
+         (*pointers)[*count] = pointer;
+         ++*count;
+         /*/
+        
+        nglArrayLock(array);
+
+        if ((*array).count >= (*array).capacity)
+        {
+            nglArrayResize(array);
+        }
+        
+        if ((*array).retainOption)
+        {
+            [(id)pointer retain];
+        }
+        
+        (*array).pointers[(*array).count] = pointer;
+        ++(*array).count;
+
+        nglArrayUnlock(array);
+    }
 }
 
 static unsigned int nglArrayIndexOfPointer(NGLArrayValues *array, void *pointer)
@@ -139,17 +198,20 @@ static unsigned int nglArrayIndexOfPointer(NGLArrayValues *array, void *pointer)
 	 }
 	 }
 	 /*/
-	void **itemPtr = (*array).pointers;
+    nglArrayLock(array);
+    void **itemPtr = (*array).pointers;
 	
 	unsigned int i;
 	for (i = 0; i < (*array).count; ++i)
 	{
 		if (pointer == *itemPtr++)
 		{
+            nglArrayUnlock(array);
 			return i;
 		}
 	}
 	//*/
+    nglArrayUnlock(array);
 	return NGL_NOT_FOUND;
 }
 
@@ -196,6 +258,9 @@ static void nglArrayRemovePointer(NGLArrayValues *array, void *pointer)
 	 *itemPtr++ = item;
 	 }
 	 /*/
+    
+    nglArrayLock(array);
+
 	void **originalPtr = (*array).pointers;
 	void **itemPtr = (*array).pointers;
 	void *item;
@@ -204,7 +269,8 @@ static void nglArrayRemovePointer(NGLArrayValues *array, void *pointer)
 	unsigned int length = (*array).count;
 	for (n = 0; n < length; ++n)
 	{
-		item = *originalPtr++;
+		item = *originalPtr;
+        originalPtr++;
 		
 		if (item == pointer)
 		{
@@ -227,8 +293,12 @@ static void nglArrayRemovePointer(NGLArrayValues *array, void *pointer)
 		}
 		
 		// Pulls the array to preserve the integrity.
-		*itemPtr++ = item;
+		*itemPtr = item;
+        itemPtr++;
 	}
+    
+    nglArrayUnlock(array);
+
 	//*/
 }
 
@@ -262,6 +332,8 @@ static void nglArrayRemovePointerAtIndex(NGLArrayValues *array, unsigned int ind
 	 memmove(*pointers + index, *pointers + index + 1, NGL_SIZE_POINTER * (*count - index));
 	 }
 	 /*/
+    
+    nglArrayLock(array);
 	if (index < (*array).count)
 	{
 		--(*array).count;
@@ -283,6 +355,8 @@ static void nglArrayRemovePointerAtIndex(NGLArrayValues *array, unsigned int ind
 		unsigned int endCount = (*array).count - index;
 		memmove((*array).pointers + index, (*array).pointers + index + 1, NGL_SIZE_POINTER * endCount);
 	}
+    nglArrayUnlock(array);
+
 	//*/
 }
 
@@ -311,6 +385,8 @@ static void nglArrayRemoveAll(NGLArrayValues *array)
 	 *count = 0;
 	 *i = 0;
 	 /*/
+    nglArrayLock(array);
+
 	if ((*array).retainOption)
 	{
 		void **itemPtr = (*array).pointers;
@@ -326,6 +402,8 @@ static void nglArrayRemoveAll(NGLArrayValues *array)
 	(*array).iterator = (*array).pointers;
 	(*array).count = 0;
 	(*array).i = 0;
+    
+    nglArrayUnlock(array);
 	//*/
 }
 
@@ -565,7 +643,20 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 	_values.i = 0;
 	_values.capacity = 0;
 	_values.retainOption = NO;
-	nglArrayResize(&_values);
+
+    // Set up a recursive mutex so code on the same thread can recursively enter.
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init(&attr);
+    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+    pthread_mutex_init(&_values.mutex, &attr );
+    
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
+    _values.mutex_lock_count=0;
+    _values.callstack=nil;
+    _values.callthread = nil;
+#endif
+
+    nglArrayResize(&_values);
 }
 
 #pragma mark -
@@ -581,7 +672,6 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 
 - (void) addPointerOnce:(void *)pointer
 {
-
 	if (nglArrayIndexOfPointer(&_values, pointer) == NGL_NOT_FOUND)
 	{
 		nglArrayAddPointer(&_values, pointer);
@@ -648,33 +738,64 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 	return _values.count;
 }
 
+- (void) lock
+{
+    nglArrayLock(&_values);
+}
+
+- (void) unlock
+{
+    nglArrayUnlock(&_values);
+}
+
+
 - (NGLArrayValues *) forLoop:(void **)target
 {
+    [self lock];
+
 	// Resets the iterator saving another Obj-C call.
 	_values.i = 0;
 	_values.iterator = _values.pointers;
 	
 	// Sets the first pointer. Avoids BAD_ACCESS to an unknown pointers.
-	*target = (_values.count > 0) ? *_values.iterator++ : NULL;
-	
+	*target = (_values.count > 0) ? *_values.iterator : NULL;
+    
 	// Return the values to the loop.
 	return &_values;
 }
 
+- (BOOL) forCheck {
+    if( self->_values.i < self->_values.count ){
+        
+        return YES;
+    }
+    else {
+        [self unlock]; // last check, unlock.
+        [self resetIterator];
+        return NO;
+    }
+}
+
+// AH: Results from nextIterator feed into the next -forCheck, so we have to leave _values.i++ incremented.
 - (void *) nextIterator
 {
 	// Loops iterator until it reach the variables count.
-	if (_values.i++ < _values.count)
+	if(_values.i+1 < _values.count)
 	{
-		return *_values.iterator++;
+        _values.i++;
+        _values.iterator++;
+        void *retVal = *_values.iterator;
+        return retVal;
 	}
-	// When iterator reach the variables count, resets iterator.
+	// When iterator reach the variables count, always return NULL
 	else
 	{
-		[self resetIterator];
+        if( _values.i < _values.count ) {
+            _values.i++;            // Declare we're past .count
+            _values.iterator=NULL;  // Terminate iteration.
+        }
+        return NULL;
 	}
-	
-	return NULL;
 }
 
 - (void) resetIterator
@@ -687,7 +808,6 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 								   objects:(NGL_ARC_ASSIGN id *)stackbuf
 									 count:(NSUInteger)len
 {
-	//*
     if ((*state).state >= _values.count)
     {
         return 0;
@@ -696,29 +816,9 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 	// Runs once. Points mutationPtr to self to avoid error when array changes while looping.
 	(*state).itemsPtr = (id *)_values.pointers;
 	(*state).state = _values.count;
-	(*state).mutationsPtr = (unsigned long *)&_values.count;//self;
+	(*state).mutationsPtr = (unsigned long *)&_values.count;
 	
     return _values.count;
-	/*/
-	// First loop.
-	if ((*state).state == 0)		
-	{
-		[self resetIterator];
-	}
-	// Last loop.
-	else if ((*state).state >= _values.count)
-	{
-		[self resetIterator];
-		return 0;
-	}
-	
-	// Runs once.
-	(*state).itemsPtr = (id *)_values.iterator++;
-	(*state).state = ++_values.i;
-	(*state).mutationsPtr = (unsigned long *)self;
-	
-	return 1;
-	//*/
 }
 
 #pragma mark -
@@ -752,6 +852,7 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
 {
 	[self removeAll];
 	nglFree(_values.pointers);
+    pthread_mutex_destroy(&_values.mutex);
 	
 	[super dealloc];
 }

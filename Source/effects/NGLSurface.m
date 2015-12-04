@@ -89,7 +89,7 @@
 	return self;
 }
 
-- (id) initWithStart:(unsigned int)start length:(unsigned int)length identifier:(unsigned int)newId
+- (id) initWithStart:(UInt32)start length:(UInt32)length identifier:(UInt32)newId
 {
 	if ((self = [super init]))
 	{
@@ -110,7 +110,7 @@
 	return [newSurface autorelease];
 }
 
-+ (id) surfacetWithStart:(unsigned int)start length:(unsigned int)length identifier:(unsigned int)newId
++ (id) surfacetWithStart:(UInt32)start length:(UInt32)length identifier:(UInt32)newId
 {
 	NGLSurface *newSurface = [[NGLSurface alloc] initWithStart:start length:length identifier:newId];
 	
@@ -179,9 +179,9 @@
 			Start: %i\n\
 			Length: %i\n",
 			[super description],
-			self.identifier,
-			self.startData,
-			self.lengthData];
+			(unsigned int)self.identifier,
+			(unsigned int)self.startData,
+			(unsigned int)self.lengthData];
 }
 
 @end
