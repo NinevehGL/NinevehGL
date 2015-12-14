@@ -182,11 +182,20 @@ double nglBackgroundTime(void)
 	/*
 	//[_collection makeAllPointersPerformSelector:_selCallBack];
 	/*/
-	id item;
-	nglFor (item, _collection)
-	{
-		nglMsg(item, _selCallBack);
-	}
+    [_collection lock];
+    NSArray *ptrCopy = [_collection allPointers];
+    [_collection unlock];
+
+    for( id item in ptrCopy ) {
+        nglMsg(item, _selCallBack);
+    }
+
+// AH: Avoid array locking durring execution, so timer can be modified while dispatching.
+//	id item;
+//	nglFor (item, _collection)
+//	{
+//		nglMsg(item, _selCallBack);
+//	}
 	//*/
 	_backgroundTime = 0.0;
 }
