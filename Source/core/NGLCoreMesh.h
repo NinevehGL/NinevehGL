@@ -93,6 +93,6 @@
  */
 - (void) drawCoreMesh;
 
-- (void) drawTelemetry:(unsigned int)telemetry;
+- (void) drawTelemetry:(UInt32)telemetry;
 
 @end

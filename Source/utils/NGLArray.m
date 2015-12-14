@@ -649,9 +649,12 @@ BOOL nglPointerIsValidToSelector(void *pointer, SEL selector)
     pthread_mutexattr_init(&attr);
     pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
     pthread_mutex_init(&_values.mutex, &attr );
+    
+#ifdef NGLARRAY_THREAD_CONTENTION_DEBUG
     _values.mutex_lock_count=0;
     _values.callstack=nil;
     _values.callthread = nil;
+#endif
 
     nglArrayResize(&_values);
 }
